@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #3f3a32;
+  color: azure;
+}
+.logo {
+  height: 60px;
+}
+header nav {
+  width: 50%;
+  justify-content: space-between;
+}
+header nav ul {
+  display: flex;
+  justify-content: space-evenly;
+
+}
+header nav ul li {
+  list-style: none;
+}
+header nav ul li a {
+  text-decoration: none;
+  width: 50%;
+  color: azure;
+  padding: 15px;
+}
+header nav ul li a:hover{
+  border-bottom: 2px solid white;
+}
+
+.login-btn {
+  margin-right: 2%;
+  padding: 0.5%;
+  width: 6%;
+  background-color: #fff9f2;
+  border-radius: 8px;
+}
+.login-btn a{
+  color: black;
+  text-decoration: none;
+}
+.login-btn:hover {
+  background-color: #fff1e1;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: beige;
+}
+main {
+  height: 100%;
+  width: 60%;
+  margin: 0% auto;
+}
+footer {
+  display: flex;
+  margin-top: auto;
+  background-color: #64594b;
+  color: azure;
+  justify-content: space-evenly;
+}
+.copyright {
+  text-align: center;
+  background-color: #3f3a32;
+  color: azure;
+}
+.main-content {
+  padding: 0px 5%;
+}
+
+.txtDecoration li {
+  list-style: none;
+}
+.txtDecoration a {
+  text-decoration: none;
+  color: azure;
+}
+.flex {
+  display: flex;
+}
+.yt-links {
+  gap: 20%;
+}
