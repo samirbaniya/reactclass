@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Contact</title>
+    <link rel="shortcut icon" href="./icon.png" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -17,11 +18,28 @@
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
-        <button class="login-btn"><a href="form.html">Login</a></button>
+        <div class="login-btn"><a href="form.html"><button>Login</button></a></div>
       </header>
 
       <main>
-        Contact
+        <div class="contact">
+          <div class="contact-form">
+          <h2>Contact Us</h2>
+          <label for="name">Name</label>
+          <input required type="text" name="name" id="name" placeholder="Enter your name.."><br><br>
+
+          <label for="address">Address</label>
+          <input type="text" name="address" id="address" placeholder="Enter your address.."><br><br>
+
+          <label for="">Email</label>
+          <input type="email" name="email" id="email" placeholder="Enter your email.."><br><br>
+
+          <label for="">Message</label><br><br>
+          <textarea required name="message" id="message" cols="30" rows="2" placeholder="Enter your message.."></textarea><br>
+          <br><div><a href="form.html"><button>Login</button></a></div>
+
+        </div>
+      </div>
       </main>
 
       <footer>
@@ -34,14 +52,27 @@
         </div>
 
         <div>
-          <ul class="txtDecoration yt-links flex">
-            <li>Youtube</li>
-            <li>Facebook</li>
-            <li>Github</li>
+          <ul class="txtDecoration listStyle flex ytfb">
+            <a href="https://www.youtube.com/shorts/wS82kKLs6mE"></a>
+              <img class="yt-link" src="yt.png" alt="youtubelink" />
+            </a>
+            <a href="https://www.facebook.com">
+              <img class="fb-link" src="fb.png" alt="fblink" />
+            </a>
           </ul>
         </div>
 
-        <div>Other links</div>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1365.4960314455627!2d85.52404511524249!3d27.62930372610191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2snp!4v1723132204167!5m2!1sen!2snp"
+            width="200"
+            height="200"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
       </footer>
 
       <span class="copyright">@Copyright</span>

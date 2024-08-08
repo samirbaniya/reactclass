@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barber Shop Landing Page</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, h3, p, a {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f9f9f9;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .hero {
+            position: relative;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .hero-content p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background: #00af92;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .cta-button:hover {
+            background: #008d76;
+        }
+
+        .services {
+            background: #f4f4f4;
+            padding: 40px 0;
+        }
+
+        .services h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .service-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .booking {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .booking h2 {
+            margin-bottom: 10px;
+        }
+
+        .booking p {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <a href="#book-now">
+            <img src="barber-shop-image.jpg" alt="Barber Shop" class="hero-image">
+        </a>
+        <div class="hero-content">
+            <h1>Welcome to The Barber Shop</h1>
+            <p>Where style meets precision. Transform your look with our expert barbers.</p>
+            <a href="#book-now" class="cta-button">Book Your Appointment</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-item">
+                <h3>Classic Haircuts</h3>
+                <p>From timeless classics to trendy cuts, we offer haircuts that suit your style and personality.</p>
+            </div>
+            <div class="service-item">
+                <h3>Precision Shaves</h3>
+                <p>Enjoy a traditional shave with high-quality products and techniques that leave your skin smooth and refreshed.</p>
+            </div>
+            <div class="service-item">
+                <h3>Beard Grooming</h3>
+                <p>Maintain your beard with our expert grooming services, including trims, shaping, and care tips.</p>
+            </div>
+            <div class="service-item">
+                <h3>Coloring & Treatments</h3>
+                <p>Add a touch of color or treat your hair to rejuvenating treatments for a fresh, vibrant look.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="book-now" class="booking">
+        <div class="container">
+            <h2>Book Now</h2>
+            <p>Ready for a fresh look? Our barbers are here to give you the best experience. Schedule your appointment today!</p>
+            <a href="booking.html" class="cta-button">Book Your Appointment</a>
+        </div>
+    </section>
+</body>
+</html>

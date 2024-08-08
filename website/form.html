@@ -3,46 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Login</title>
+    <link rel="shortcut icon" href="./icon.png" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <a href="#"><img class="logo" src="./logo.png" alt="" /></a>
-        <nav>
-          <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-        <button class="login-btn"><a href="form.html">Login</a></button>
-      </header>
-
-      <main>form</main>
-
-      <footer>
-        <div>
-          <ul class="txtDecoration">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+    <div class="login-page">
+      <main>
+        <div> 
         </div>
 
-        <div>
-          <ul class="txtDecoration yt-links flex">
-            <li>Youtube</li>
-            <li>Facebook</li>
-            <li>Github</li>
-          </ul>
+        <div class="form-wrapper">
+          <div class="form-pic">
+            <section class="form">
+              <label for="name">Name:</label>
+              <input type="text" id="name" /><br /><br />
+    
+              <label for="age">Age:</label>
+              <input type="number" min="1" max="100" id="age" /><br /><br />
+    
+              <label for="gender">Gender:</label>
+              <input type="radio" id="male" name="gender" value="male" />
+              <label for="male">Male</label>
+              <input type="radio" id="female" name="gender" value="female" />
+              <label for="female">Female</label><br /><br />
+    
+              <label for="email">Email:</label>
+              <input type="email" id="email" /><br /><br />
+    
+              <label for="subjects">Subjects:</label>
+              <input type="checkbox" id="HTML" name="subjects" />
+              <label for="Subjects">HTML</label>
+              <input type="checkbox" id="CSS" name="subjects" />
+              <label for="Subjects">CSS</label><br /><br />
+    
+              <label for="payment">Payment Methods:</label>
+              <select name="payment" id="payment">
+                <option value="Debitard">Debit card</option>
+                <option value="CreditCard">Credit card</option>
+                <option value="Esewa">Esewa</option></select
+              ><br /><br />
+    
+              <label for="password">Password:</label>
+              <input type="password" id="password" /><br /><br /><br />
+    
+              <button type="submit" onclick="read()">Submit</button>
+            </section>
+            <section>
+              <a href="home.html"><img class="img" src="./1.png" alt="formSidePic" /></a>
+            </section>
+          </div>
         </div>
-
-        <div>Other links</div>
-      </footer>
-
-      <span class="copyright">@Copyright</span>
+      </main>
     </div>
 
     <script src="script.js"></script>

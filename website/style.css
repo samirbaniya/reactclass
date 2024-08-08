@@ -15,6 +15,7 @@ header {
 header nav {
   width: 50%;
   justify-content: space-between;
+  font-size: larger;
 }
 header nav ul {
   display: flex;
@@ -34,47 +35,56 @@ header nav ul li a:hover{
   border-bottom: 2px solid white;
 }
 
+header nav ul li a:focus{
+  color: #f4b944;
+  border-bottom: 2px solid #f4b944;
+}
+
 .login-btn {
   margin-right: 2%;
-  padding: 0.5%;
-  width: 6%;
-  background-color: #fff9f2;
-  border-radius: 8px;
+
 }
-.login-btn a{
+/* .login-btn a{
   color: black;
   text-decoration: none;
+  padding: 1%;
+  width: 6%;
+  background-color: #fff1e1;
+  border-radius: 8px;
 }
 .login-btn:hover {
-  background-color: #fff1e1;
-}
+  background-color:#f4b944 ;
+} */
 .wrapper {
   display: flex;
   flex-direction: column;
-  background-color: beige;
+  /* background-color: beige; */
 }
 main {
-  height: 100%;
+  height: auto;
   width: 60%;
-  margin: 0% auto;
+  margin: 0% 15% 0% 24%;
+  ;
 }
 footer {
   display: flex;
   margin-top: auto;
-  background-color: #64594b;
+  background-color: #2b2823;
   color: azure;
   justify-content: space-evenly;
+  font-size: larger;
 }
 .copyright {
   text-align: center;
-  background-color: #3f3a32;
+  background-color: #312d24;
   color: azure;
+  font-size: larger;
 }
 .main-content {
   padding: 0px 5%;
 }
 
-.txtDecoration li {
+.listStyle li {
   list-style: none;
 }
 .txtDecoration a {
@@ -84,6 +94,56 @@ footer {
 .flex {
   display: flex;
 }
-.yt-links {
-  gap: 20%;
+.yt-link {
+  height: 100px;
+}
+.fb-link{
+  height: 60px;
+}
+.service-item{
+  align-content: center;
+}
+.map{
+  margin: 5px;
+}
+.ytfb{
+  align-items: center;
+}
+.contact{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-form{
+  background-color: #eef7ff;
+  border-radius: 5px;
+  padding: 26px;
+  height: 300px;
+  width: 300px;
+  box-shadow: 4px 4px 20px black;
+}
+
+.form-pic {
+  display: flex;
+  background-color: white;
+  padding: 8px;
+  border-radius: 15px;
+  width: 490px;
+}
+.form {
+  margin: 30px;
+}
+.img {
+  border-radius: 15px;
+  height: 100%;
+  width: 100%;
+}
+.login-page{
+  background-color: azure;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
