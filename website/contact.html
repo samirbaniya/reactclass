@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact</title>
-    <link rel="shortcut icon" href="./icon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./CSS/style.css" />
   </head>
   <body>
     <div class="wrapper">
       <header>
-        <a href="#"><img class="logo" src="./logo.png" alt="" /></a>
+        <a href="home.html"><img class="logo" src="./images/logo.png" alt="logo" /></a>
         <nav>
           <ul>
             <li><a href="home.html">Home</a></li>
@@ -18,28 +18,54 @@
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
-        <div class="login-btn"><a href="form.html"><button>Login</button></a></div>
+        <div class="login-btn">
+          <a href="form.html"><button>Login</button></a>
+        </div>
       </header>
 
       <main>
         <div class="contact">
+          <div class="flex form-Img"><div>
+          <img class="cimg" src="./images/contact-img.png" alt="beardimg"></div>
           <div class="contact-form">
-          <h2>Contact Us</h2>
-          <label for="name">Name</label>
-          <input required type="text" name="name" id="name" placeholder="Enter your name.."><br><br>
+            <h2>Contact Us</h2>
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter your name.."
+            /><br /><br />
 
-          <label for="address">Address</label>
-          <input type="text" name="address" id="address" placeholder="Enter your address.."><br><br>
+            <label for="address">Address:</label>
+            <input
+              type="text"
+              name="address"
+              id="address"
+              placeholder="Enter your address.."
+            /><br /><br />
 
-          <label for="">Email</label>
-          <input type="email" name="email" id="email" placeholder="Enter your email.."><br><br>
+            <label for="">Email:</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter your email.."
+            /><br /><br />
 
-          <label for="">Message</label><br><br>
-          <textarea required name="message" id="message" cols="30" rows="2" placeholder="Enter your message.."></textarea><br>
-          <br><div><a href="form.html"><button>Login</button></a></div>
-
+            <label for="">Message:</label><br />
+            <textarea class="contact-msg"
+              name="message"
+              id="message"
+              cols="30"
+              rows="2"
+              placeholder="Enter your message.."
+            ></textarea
+            ><br />
+            <br /><button onclick="validation()">Submit</button>
+          </div></div>
+          
         </div>
-      </div>
       </main>
 
       <footer>
@@ -53,11 +79,11 @@
 
         <div>
           <ul class="txtDecoration listStyle flex ytfb">
-            <a href="https://www.youtube.com/shorts/wS82kKLs6mE"></a>
-              <img class="yt-link" src="yt.png" alt="youtubelink" />
+            <a href="https://www.youtube.com/shorts/wS82kKLs6mE">
+              <img class="yt-link" src="./images/yt.png" alt="youtubelink" />
             </a>
             <a href="https://www.facebook.com">
-              <img class="fb-link" src="fb.png" alt="fblink" />
+              <img class="fb-link" src="./images/fb.png" alt="fblink" />
             </a>
           </ul>
         </div>
@@ -70,7 +96,8 @@
             style="border: 0"
             allowfullscreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
+            referrerpolicy="no-referrer-when-downgrade"
+          >
           </iframe>
         </div>
       </footer>
@@ -78,6 +105,6 @@
       <span class="copyright">@Copyright</span>
     </div>
 
-    <script src="script.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>

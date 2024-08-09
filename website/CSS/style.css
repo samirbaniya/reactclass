@@ -58,12 +58,12 @@ header nav ul li a:focus{
 .wrapper {
   display: flex;
   flex-direction: column;
-  /* background-color: beige; */
+  background-color: beige;
 }
 main {
   height: auto;
   width: 60%;
-  margin: 0% 15% 0% 24%;
+  margin: 0% 15% 0% 22%;
   ;
 }
 footer {
@@ -100,6 +100,10 @@ footer {
 .fb-link{
   height: 60px;
 }
+.fb-link:hover{
+  background-color: #0680dd;
+  border-radius: 20px;
+}
 .service-item{
   align-content: center;
 }
@@ -116,12 +120,22 @@ footer {
   align-items: center;
 }
 .contact-form{
-  background-color: #eef7ff;
-  border-radius: 5px;
+  /* background-color: #eef7ff; */
+  /* border-radius: 5px; */
   padding: 26px;
   height: 300px;
-  width: 300px;
-  box-shadow: 4px 4px 20px black;
+  width: 400px;
+  /* box-shadow: 1px 1px 1px black; */
+}
+.contact-form input{
+  border-radius: 5px;
+  width: 30vw;
+}
+
+.contact-msg{
+  border-radius: 5px;
+  width: 30vw;
+  border: 2px solid black;
 }
 
 .form-pic {
@@ -146,4 +160,25 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.form-Img{
+  background-color: white;
+  padding: 5px 5px 1px 5px;
+  border-radius: 30px;
+}
+.cimg{
+  height:70vh;
+  border-radius: 30px;
+}
+.shop-img{
+  margin: 10px 30px 20px 30px;
+  border-radius: 20px;
+  height: 360px;
+}
+.txtjustify{
+  text-align: justify;
+}
+
+@media screen and (max-width: 800px) {
+  
 }
