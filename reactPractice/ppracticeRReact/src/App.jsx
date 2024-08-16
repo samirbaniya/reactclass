@@ -1,19 +1,10 @@
-import Marriage from "./Marriage"
+// import Marriage from "./Marriage"
+// import PracticeState from "./PracticeState"
+
+import Nmarriage from "./Nmarriage"
+// import PracticeUsestateApp from "./PracticeUseStateApp"
 
 function App() {
-  const wed1={
-    groomsName:"Rajan",
-    bridesName:"Sajana",
-    date:"SEPT 24 2024 At 10 AM",
-    venue:"Lotus Party Venue"
-  }
-
-  const wed2={
-    groomsName:"Biraj",
-    bridesName:"Bipina",
-    date:"NOV 2 2024 At 11 AM",
-    venue:"Panchakanya Party Venue"
-  }
 
   const WedStyle={
     display:"flex",
@@ -21,11 +12,14 @@ function App() {
     alignItems:"center"
   }
     
-  return (
+  return(
+    <>
     <div style={WedStyle}>
-      <Marriage data={wed1} />
-      <Marriage data={wed2} />
-      </div>
+    <Nmarriage/>
+    </div>
+    {/* <PracticeUsestateApp/> */}
+    </>
+    
   )
 }
 
