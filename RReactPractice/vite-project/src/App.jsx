@@ -1,13 +1,16 @@
-import AppMarriage from "./AppMarriage"
+
+// import AppMarriage from "./marriage/AppMarriage";
+import StateAndProps from "./stateandprops/StateAndProps";
+
+
 
 function App() {
-    
-  return(
+  return (
     <>
-    <AppMarriage/>
+      {/* <AppMarriage/> */}
+      <StateAndProps/>
     </>
-    
-  )
+  );
 }
 
-export default App
+export default App;
