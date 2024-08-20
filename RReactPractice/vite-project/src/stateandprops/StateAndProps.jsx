@@ -2,16 +2,18 @@
 import { useState } from "react";
 import SaPParent from "./SaPParent";
 function StateAndProps() {
+  
+  
+  const [change2, setChange2] = useState({
+    background: "green",
+    color: "white",
+  });
+
   const [change, setChange] = useState({
     background: "brown",
 
     color: "white",
     changed:false
-  });
-  
-  const [change2, setChange2] = useState({
-    background: "green",
-    color: "white",
   });
 
   function changeFunction() {
@@ -23,7 +25,7 @@ function StateAndProps() {
     });
   }else{
     setChange({
-      background: "brown",
+    background: "brown",
     color: "white",
     changed:false
     });
