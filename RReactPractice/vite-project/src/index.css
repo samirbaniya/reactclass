@@ -44,6 +44,10 @@
   .login-btn {
     margin-right: 2%;
   }
+
+  .login-btn:hover {
+    cursor: pointer;
+  }
   /* .login-btn a{
     color: black;
     text-decoration: none;

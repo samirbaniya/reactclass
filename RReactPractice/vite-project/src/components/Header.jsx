@@ -4,32 +4,59 @@ import Contact from "../pages/Contact";
 import Home from "../pages/Home";
 
 function Header(props) {
-    const { setRoutes } = props;
-    function routeSwitchContact() {
-      setRoutes(<Contact />);
-    }
-    function routeSwitchAbout() {
-      setRoutes(<About />);
-    }
-    function routeSwitchHome() {
-      setRoutes(<Home />);
-    }
-    return (
-      <header>
-        <img onClick={routeSwitchHome} className="logo" src="logo.png" alt="logo" />
-        <nav>
-          <ul>
-          <li onClick={routeSwitchHome}>Home</li>
-            <li onClick={routeSwitchAbout}>About</li>
-            <li onClick={routeSwitchContact}>Contact us</li>
-          </ul>
-        </nav>
-        <div className="login-btn">
-          <a href="form.html"><button>Login</button></a>
-        </div>
-      </header>
-    );
-  }
-  
+  const { setRoutes } = props;
+  // function routeSwitchContact() {
+  //   setRoutes(<Contact />);
+  // }
+  // function routeSwitchAbout() {
+  //   setRoutes(<About />);
+  // }
+  // function routeSwitchHome() {
+  //   setRoutes(<Home />);
+  // }
+  return (
+    <header>
+      <img
+        onClick={() => {
+          setRoutes(<Home />);
+        }}
+        className="logo"
+        src="logo.png"
+        alt="logo"
+      />
+      <nav>
+        <ul>
+          {/* <li onClick={routeSwitchHome}>Home</li>
+          <li onClick={routeSwitchAbout}>About</li>
+          <li onClick={routeSwitchContact}>Contact us</li> */}
+          <li
+            onClick={() => {
+              setRoutes(<Home />);
+            }}
+          >
+            Home
+          </li>
+          <li
+            onClick={() => {
+              setRoutes(<About />);
+            }}
+          >
+            About
+          </li>
+          <li
+            onClick={() => {
+              setRoutes(<Contact />);
+            }}
+          >
+            Contact us
+          </li>
+        </ul>
+      </nav>
+      <div className="login-btn">
+        <button>Login</button>
+      </div>
+    </header>
+  );
+}
 
-export default Header
+export default Header;
