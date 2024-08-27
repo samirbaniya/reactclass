@@ -1,0 +1,6 @@
+footer{
+    margin-top: auto;
+    background-color: #FFD7C4;
+    display: flex;
+    justify-content: space-around;
+}

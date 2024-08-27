@@ -1,0 +1,9 @@
+header{
+    background-color: #9DBDFF;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    height: 50px;
+}
