@@ -1,10 +1,8 @@
-/* eslint-disable react/prop-types */
-import About from "../pages/About";
-import Contact from "../pages/Contact";
-import Home from "../pages/Home";
 
-function Header(props) {
-  const { setRoutes } = props;
+import { NavLink } from "react-router-dom";
+
+function Header() {
+  // const { setRoutes } = props;
   // function routeSwitchContact() {
   //   setRoutes(<Contact />);
   // }
@@ -16,19 +14,23 @@ function Header(props) {
   // }
   return (
     <header>
+      <NavLink to={"/home"}>
       <img
-        onClick={() => {
-          setRoutes(<Home />);
-        }}
+        // onClick={() => {
+        //   setRoutes(<Home />);
+        // }}
         className="logo"
         src="logo.png"
         alt="logo"
       />
+      </NavLink>
+      
       <nav>
-        <ul>
-          {/* <li onClick={routeSwitchHome}>Home</li>
+        {/* <ul><li onClick={routeSwitchHome}>Home</li>
           <li onClick={routeSwitchAbout}>About</li>
           <li onClick={routeSwitchContact}>Contact us</li> */}
+        {/* -----------------------------------------------
+          
           <li
             onClick={() => {
               setRoutes(<Home />);
@@ -50,6 +52,21 @@ function Header(props) {
           >
             Contact us
           </li>
+           </ul>
+          ----------------------------------------------- */}
+
+        <ul>
+          <NavLink to={"/home"}>
+            <li>Home</li>
+          </NavLink>
+
+          <NavLink to={"/about"}>
+            <li>About</li>
+          </NavLink>
+
+          <NavLink to={"/contact"}>
+            <li>Contact</li>
+          </NavLink>
         </ul>
       </nav>
       <div className="login-btn">

@@ -1,17 +1,21 @@
+import { NavLink } from "react-router-dom";
+
 function Footer() {
   return (
     <footer>
       <div>
         <ul className="txtDecoration">
-          <li>
-            <a href="home.html">Home</a>
-          </li>
-          <li>
-            <a href="about.html">About</a>
-          </li>
-          <li>
-            <a href="contact.html">Contact</a>
-          </li>
+        <NavLink to={"/home"}>
+            <li>Home</li>
+          </NavLink>
+
+          <NavLink to={"/about"}>
+            <li>About</li>
+          </NavLink>
+
+          <NavLink to={"/contact"}>
+            <li>Contact</li>
+          </NavLink>
         </ul>
       </div>
 

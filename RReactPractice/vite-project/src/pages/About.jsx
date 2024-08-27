@@ -1,10 +1,20 @@
+import { NavLink, Outlet } from "react-router-dom";
+
 function About() {
     return (
       <div>
-          <p>
+        <div>
+        <NavLink to={"aboutUs"}>Lets see About Us</NavLink>
+      </div>
+      <div>
+        <NavLink to={"aboutMe"}>Lets see Me</NavLink>
+      </div>
+      About content is here <Outlet />
+  
+          <section>
             <h2>About Us</h2>
             <h4>Welcome to The Barber Shop - Where Tradition Meets Style</h4>
-            <div className="flex txtjustify">
+            <div className=" txtjustify">
               <p>
                 At The Barber Shop, we believe in more than just haircuts and
                 shaves; we believe in crafting an experience. Our mission is to
@@ -13,7 +23,7 @@ function About() {
                 trends to ensure you leave looking and feeling your best.
               </p>
               
-            </div>
+            
             <h3>Our Story</h3>
             <p>
               Founded with a passion for exceptional grooming, The Barber Shop has
@@ -61,8 +71,8 @@ function About() {
             deliver outstanding results. We invite you to visit us and experience
             the difference for yourself. Thank you for choosing The Barber Shop.
             We look forward to serving you and helping you achieve your best look
-            yet!
-          </p>
+            yet!</div>
+          </section>
       </div>
     );
   }

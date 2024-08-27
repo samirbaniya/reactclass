@@ -24,6 +24,7 @@
   }
   header nav ul li {
     list-style: none;
+    color: aliceblue;
   }
   header nav ul li a {
     text-decoration: none;
@@ -32,14 +33,15 @@
     padding: 15px;
   }
   header nav ul li:hover {
-    border-bottom: 2px solid white;
+    box-shadow: 0px 2px 0px white;
     cursor: pointer;
   }
   
   header nav ul li:active {
     color: #f4b944;
-    border-bottom: 2px solid #f4b944;
+    box-shadow: 0px 2px 0px #f4b944
   }
+  
   
   .login-btn {
     margin-right: 2%;
@@ -70,10 +72,10 @@
     margin: 0% 15% 0% 22%;
 
   }
-  body{
+  /* body{
     background-color: beige;
 
-  }
+  } */
   footer {
     display: flex;
     margin-top: auto;
@@ -90,7 +92,10 @@
   }
   .main-content {
     padding: 0px 5%;
-  }
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;   */
+}
   
   .listStyle li {
     list-style: none;
@@ -126,6 +131,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #49a5ff;
+    /* background-image: url("./formbg.png");
+     background-repeat: no-repeat; 
+    background-size:cover; */
   }
   .contact-form {
     /* background-color: #eef7ff; */
