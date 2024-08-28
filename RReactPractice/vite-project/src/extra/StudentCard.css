@@ -15,7 +15,9 @@
   border-radius: 5px;
   box-shadow: 10px 10px 10px #d7d7d7;
   gap: 15px;
-  /* background-image: url("shop.png"); */
+  color: black;
+  border: 1px solid rgb(211, 210, 210);
+  background-image: url("3.png");
   /* background-repeat: no-repeat;
   background-size: cover; */
 }
