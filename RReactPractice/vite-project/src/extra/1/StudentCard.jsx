@@ -6,14 +6,14 @@ function StudentCard() {
       roll: 1,
       address:"Banepa",
       subject:"C++",
-      image: "1.png"
+      image: "images/1.png"
     },
     {
       name: "Raj",
       roll: 2,
       address:"Panauti",
       subject:"Java",
-      image: "2.png"
+      image: "images/2.png"
 
     },
     {
@@ -21,84 +21,84 @@ function StudentCard() {
       roll: 4,
       address:"Banepa",
       subject:"Python",
-      image: "beard.png"
+      image: "images/beard.png"
     },
     {
       name: "Gopal",
       roll: 5,
       address:"Banepa",
       subject:"C++",
-      image: "fb.png"
+      image: "images/fb.png"
     },
     {
       name: "Harka",
       roll: 6,
       address:"Bhaktapur",
       subject:"C++",
-      image: "logo.png"
+      image: "images/logo.png"
     },
     {
       name: "Hari",
       roll: 55,
       address:"Banepa",
       subject:"C++",
-      image: "icon.png"
+      image: "images/icon.png"
     },
     {
       name: "Sravan",
       roll: 11,
       address:"Nala",
       subject:"C++",
-      image: "shop.png"
+      image: "images/shop.png"
     },
     {
       name: "Rajesh",
       roll: 7,
       address:"Banepa",
       subject:"C++",
-      image: "yt.png"
+      image: "images/yt.png"
     },
     {
       name: "Sheldon",
       roll: 12,
       address:"Banepa",
       subject:"OOP",
-      image: "fb.png"
+      image: "images/fb.png"
     },
     {
       name: "Alex",
       roll: 8,
       address:"Banepa",
       subject:"C++",
-      image: "logo.png"
+      image: "images/logo.png"
     },
     {
       name: "Luke",
       roll: 9,
       address:"Banepa",
       subject:"C++",
-      image: "logo.png"
+      image: "images/logo.png"
     },
     {
       name: "Charlie",
       roll: 10,
       address:"Banepa",
       subject:"Math",
-      image: "logo.png"
+      image: "images/logo.png"
     },
     {
       name: "Alan",
       roll: 15,
       address:"Banepa",
       subject:"C++",
-      image: "logo.png"
+      image: "images/logo.png"
     },
     {
       name: "Alan",
       roll: 22,
       address:"Banepa",
       subject:"C++",
-      image: "logo.png"
+      image: "images/logo.png"
     },
     
   ];

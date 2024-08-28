@@ -4,7 +4,7 @@ function Contact() {
       <div className="contact">
         <div className="flex form-Img">
           <div>
-            <img className="cimg" src="contact-img.png" alt="beardimg" />
+            <img className="cimg" src="images/contact-img.png" alt="beardimg" />
           </div>
           <div className="contact-form">
             <h2>Contact Us</h2>

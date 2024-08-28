@@ -22,10 +22,10 @@ function Footer() {
       <div>
         <ul className="txtDecoration listStyle flex ytfb">
           <a href="https://www.youtube.com/shorts/wS82kKLs6mE">
-            <img className="yt-link" src="yt.png" alt="youtubelink" />
+            <img className="yt-link" src="images/yt.png" alt="youtubelink" />
           </a>
           <a href="https://www.facebook.com">
-            <img className="fb-link" src="fb.png" alt="fblink" />
+            <img className="fb-link" src="images/fb.png" alt="fblink" />
           </a>
         </ul>
       </div>

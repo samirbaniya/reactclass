@@ -9,9 +9,9 @@ function Home() {
             From timeless classics to trendy cuts, we offer haircuts that suit
             your style and personality.
           </p>
-          <img src="haircut.png" alt="haircutm" />
-          <img src="haircut2.png" alt="haircut2" />
-          <img src="haircut3.png" alt="haircut3" />
+          <img src="images/haircut.png" alt="haircutm" />
+          <img src="images/haircut2.png" alt="haircut2" />
+          <img src="images/haircut3.png" alt="haircut3" />
         </div>
         <div className="service-item">
           <h3>Precision Shaves</h3>
@@ -26,7 +26,7 @@ function Home() {
             Maintain your beard with our expert grooming services, including
             trims, shaping, and care tips.
           </p>
-          <img src="beard.jpg" alt="beard" />
+          <img src="images/beard.jpg" alt="beard" />
         </div>
         <div className="service-item">
           <h3>Coloring & Treatments</h3>

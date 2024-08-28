@@ -1,11 +1,12 @@
 // import AppMarriage from "./marriage/AppMarriage";
 // import StateAndProps from "./stateandprops/StateAndProps";
 // import RouteApp from "./RouteApp/RouteApp";
-// import RouterDomApp from "./RouterDomApp";
 // import CustomMap from "./extra/CustomMap";
 
+import RouterDomApp from "./extra/RouterDomApp";
 
-import StudentCard from "./extra/StudentCard";
+
+// import StudentCard from "./extra/1/StudentCard";
 
 function App() {
   return (
@@ -13,9 +14,9 @@ function App() {
       {/* <AppMarriage/> */}
       {/* <StateAndProps/> */}
       {/* <RouteApp /> */}
-      {/* <RouterDomApp/> */}
+      <RouterDomApp/>
       {/* <CustomMap/> */}
-      <StudentCard/>
+      {/* <StudentCard/> */}
     </>
   );
 }
