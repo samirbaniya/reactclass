@@ -1,12 +1,12 @@
-// import AppMarriage from "./marriage/AppMarriage";
-// import StateAndProps from "./stateandprops/StateAndProps";
-// import RouteApp from "./RouteApp/RouteApp";
-// import CustomMap from "./extra/CustomMap";
+// import AppMarriage from "./extra/0/marriage/AppMarriage";
+// import StateAndProps from "./extra/0/stateandprops/StateAndProps";
+// import RouteApp from "./extra/1/RouteApp/RouteApp";
+// import RouterDomApp from "./extra/0/RouterDomApp";
+// import CustomMap from "./extra/1/CustomMap";
 
-import RouterDomApp from "./extra/RouterDomApp";
 
 
-// import StudentCard from "./extra/1/StudentCard";
+import StudentCard from "./extra/1/StudentCard";
 
 function App() {
   return (
@@ -14,9 +14,9 @@ function App() {
       {/* <AppMarriage/> */}
       {/* <StateAndProps/> */}
       {/* <RouteApp /> */}
-      <RouterDomApp/>
+      {/* <RouterDomApp/> */}
       {/* <CustomMap/> */}
-      {/* <StudentCard/> */}
+      <StudentCard/>
     </>
   );
 }

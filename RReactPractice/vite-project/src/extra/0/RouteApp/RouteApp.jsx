@@ -1,7 +1,8 @@
 import { useState } from "react";
-import Home from "../pages/Home";
-import Header from "../components/header";
-import Footer from "../components/footer";
+import Home from "../../../pages/Home";
+import Header from "../../../components/Header";
+import Footer from "../../../components/Footer";
+
 function RouteApp() {
       const [routes, setRoutes] = useState(<Home/>);
       return (
