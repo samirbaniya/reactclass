@@ -1,8 +1,11 @@
 // import AppMarriage from "./marriage/AppMarriage";
 // import StateAndProps from "./stateandprops/StateAndProps";
 // import RouteApp from "./RouteApp/RouteApp";
+// import RouterDomApp from "./RouterDomApp";
+// import CustomMap from "./extra/CustomMap";
 
-import RouterDomApp from "./RouterDomApp";
+
+import StudentCard from "./extra/StudentCard";
 
 function App() {
   return (
@@ -10,7 +13,9 @@ function App() {
       {/* <AppMarriage/> */}
       {/* <StateAndProps/> */}
       {/* <RouteApp /> */}
-      <RouterDomApp/>
+      {/* <RouterDomApp/> */}
+      {/* <CustomMap/> */}
+      <StudentCard/>
     </>
   );
 }

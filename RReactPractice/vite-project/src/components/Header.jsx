@@ -2,7 +2,7 @@
 import { NavLink } from "react-router-dom";
 
 function Header() {
-  // const { setRoutes } = props;
+  // <section>const { setRoutes } = props;
   // function routeSwitchContact() {
   //   setRoutes(<Contact />);
   // }
@@ -11,14 +11,12 @@ function Header() {
   // }
   // function routeSwitchHome() {
   //   setRoutes(<Home />);
-  // }
+  // }</section>
+  
   return (
     <header>
       <NavLink to={"/home"}>
       <img
-        // onClick={() => {
-        //   setRoutes(<Home />);
-        // }}
         className="logo"
         src="logo.png"
         alt="logo"
@@ -26,10 +24,10 @@ function Header() {
       </NavLink>
       
       <nav>
-        {/* <ul><li onClick={routeSwitchHome}>Home</li>
+        {/* <section> <ul><li onClick={routeSwitchHome}>Home</li>
           <li onClick={routeSwitchAbout}>About</li>
-          <li onClick={routeSwitchContact}>Contact us</li> */}
-        {/* -----------------------------------------------
+          <li onClick={routeSwitchContact}>Contact us</li>
+        -----------------------------------------------
           
           <li
             onClick={() => {
@@ -53,7 +51,8 @@ function Header() {
             Contact us
           </li>
            </ul>
-          ----------------------------------------------- */}
+          -----------------------------------------------</section> */}
+       
 
         <ul>
           <NavLink to={"/home"}>
