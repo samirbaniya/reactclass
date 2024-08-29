@@ -1,0 +1,27 @@
+.pet-img{
+    height: 100px;
+    width: 150px;
+    border-radius: 10px;
+
+}
+.heading{
+    color: #323232;
+    text-align: center;
+}
+.card{
+    border: 1px solid black;
+    width: 300px;
+    /* margin: 10px; */
+    border-radius: 10px;
+}
+.pet-card{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.petdiv{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+
+}

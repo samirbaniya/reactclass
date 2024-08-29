@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+}
+body,#root{
+    height: 100vh;
+    overflow: auto;
+}
+.flex{
+    display: flex;
+}
+.wholePage{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
