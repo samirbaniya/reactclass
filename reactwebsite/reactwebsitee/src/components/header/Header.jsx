@@ -1,13 +1,15 @@
-import Navbar from "../navbar/Navbar"
-import "./Header.css"
+import Navbar from "../navbar/Navbar";
+import "./Header.css";
 function Header() {
   return (
     <header>
-        <div>logo</div>
-        <Navbar/>
-        <button>Login</button>
+      <section>
+        <img className="logo" src="/images/adoptLogo1.png" alt="logo" />
+      </section>
+      <Navbar />
+      <button>Login</button>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;

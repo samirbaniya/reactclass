@@ -1,13 +1,15 @@
-nav ul{
-    list-style: none;
-    display: flex;
-    gap: 100px;
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 100px;
 }
-nav a{
-    text-decoration: none;
-    color: black;
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: larger;
 }
-nav a:hover{
-    text-decoration: none;
-    color: black;
+nav a:hover {
+  text-decoration: none;
+  color: aliceblue;
+  box-shadow: 0px 2px 1px white;
 }

@@ -1,0 +1,39 @@
+.contact {
+  background-image: url("images/contactBG.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.form-horizontal {
+  width: 60%;
+  margin: 4% auto;
+  padding: 4%;
+  border-radius: 15px;
+  background-color: whitesmoke;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.form-horizontal label {
+  width: 100%;
+  padding: 10% 0;
+  margin: 14% 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.form-control {
+  border: none;
+  width: 98%;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  padding: 1%;
+  margin: 1% auto;
+}
+.form-horizontal button {
+  width: 50%;
+  /* margin-left: 26%; */
+  margin-top: 2%;
+}
+.text-center {
+  text-align: center;
+}
+.text-white {
+  color: white;
+}

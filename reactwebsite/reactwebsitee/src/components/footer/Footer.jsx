@@ -1,7 +1,25 @@
 import "./Footer.css"
 function Footer() {
   return (
-    <footer>Footer</footer>
+    <footer>
+    <div>
+      Links
+      <ul>
+        <li>Home</li>
+        <li> Adopt Pet</li>
+        <li>About</li>
+      </ul>
+    </div>
+
+    <div>
+      Other Links
+      <ul>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+      </ul>
+    </div>
+  </footer>
   )
 }
 

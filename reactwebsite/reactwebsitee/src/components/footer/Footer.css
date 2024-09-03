@@ -1,4 +1,8 @@
-footer{
-    background-color: #FFD7C4;
-    margin-top: auto;
+footer {
+  background-color: #ff9874;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  color: #7387cd;
 }
