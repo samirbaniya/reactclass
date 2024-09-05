@@ -1,13 +1,18 @@
 import Navbar from "../navbar/Navbar";
+import { NavLink } from "react-router-dom";
 import "./Header.css";
 function Header() {
   return (
     <header>
-      <section>
-        <img className="logo" src="/images/adoptLogo1.png" alt="logo" />
-      </section>
-      <Navbar />
-      <button>Login</button>
+      <div className="header">
+        <section>
+          <NavLink to={"/home"}>
+            <img className="logo" src="/images/adoptLogo1.png" alt="logo" />
+          </NavLink>
+        </section>
+        <Navbar />
+        <button>Login</button>
+      </div>
     </header>
   );
 }

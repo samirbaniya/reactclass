@@ -1,15 +1,20 @@
-*{
-    margin: 0;
+* {
+  margin: 0;
 }
-body,#root{
-    height: 100vh;
-    overflow: auto;
+body,
+#root {
+  height: 100vh;
+  overflow: auto;
 }
-.flex{
-    display: flex;
+.flex {
+  display: flex;
 }
-.wholePage{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+.wholePage {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+a {
+  text-decoration: none !important;
+  color: inherit;
 }

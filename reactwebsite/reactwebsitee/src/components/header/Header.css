@@ -1,5 +1,11 @@
 header {
   background-color: #7695ff;
+  background-image: linear-gradient(to right, white, #7695ff);
+  display: flex;
+  justify-content: center;
+}
+.header {
+  width: 87%;
   display: flex;
   justify-content: space-between;
   padding: 20px;
@@ -7,4 +13,7 @@ header {
 }
 .logo {
   height: 50px;
+}
+.logo:hover {
+  box-shadow: 1px 1px 1px #cbd5ff;
 }

@@ -1,8 +1,9 @@
 footer {
-  background-color: #ff9874;
+  background-color: #7695ff;
   margin-top: auto;
   display: flex;
   justify-content: space-around;
   padding: 10px;
-  color: #7387cd;
+  color: white;
+  font-size: larger;
 }

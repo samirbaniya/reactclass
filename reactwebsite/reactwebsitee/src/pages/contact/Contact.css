@@ -1,11 +1,12 @@
 .contact {
-  background-image: url("images/contactBG.png");
+  /* background-image: url("images/contactBG.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
+  background-color: #f5f8ff;
 }
 .form-horizontal {
-  width: 60%;
-  margin: 4% auto;
+  width: 36%;
+  margin: 1% auto;
   padding: 4%;
   border-radius: 15px;
   background-color: whitesmoke;
@@ -36,4 +37,7 @@
 }
 .text-white {
   color: white;
+}
+.contact-heading {
+  padding: 3% 0;
 }

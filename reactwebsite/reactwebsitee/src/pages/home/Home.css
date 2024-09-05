@@ -1,10 +1,3 @@
-.pet-img {
-  height: 100%;
-  width: 100%;
-  /* margin-left: 56px; */
-  /* max-width: 70%;
-  max-height: 100%; */
-}
 .heading {
   color: #7387cd;
   text-align: center;
@@ -12,62 +5,79 @@
 }
 .card {
   /* border: 1px solid black; */
-  box-shadow: 14px 14px 30px rgba(0, 0, 0, 0.19);
-  width: 347px;
-  height: 450px;
-  /* margin: 10px; */
+  box-shadow: 14px 14px 30px rgba(0, 0, 0, 0.19), 5px 5px 0px #f1f1ff;
+  width: 228px;
+  height: 300px;
+  margin: 10px;
   border-radius: 10px;
   background-color: white;
-  padding: 20px 20px 0px 20px;
+  padding: 10px 10px 15px 10px;
   border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* border-bottom: 5px solid #f1f1ff;
+  border-right: 5px solid #f1f1ff; */
 }
 .card:hover {
   box-shadow: 14px 14px 30px rgba(0, 0, 0, 0.5);
   border: 1px solid #8a8a8b;
   cursor: pointer;
 }
+
 .pet-card {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
   /* grid-template-columns: 1fr 1fr 1fr; */
   background-color: #f9fbff;
-  padding: 40px 40px 40px 80px;
+  padding: 40px 40px 40px 120px;
 }
 
+.pet-img {
+  height: 190px;
+  width: 200px;
+  /* margin-left: 56px; */
+  /* max-width: 70%;
+  max-height: 100%; */
+}
 .pet-div {
   border-radius: 10px;
-  padding: 20px;
   background-color: #f6f9ff;
-  width: 87%;
-  height: 45%;
+  width: 100%;
+  height: 73%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .pet-description {
-  margin-top: 30px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   /* gap: 20px; */
   /* padding-left: 50px; */
-  width: 50%;
+  width: 100%;
 }
-.adopt-btn {
+/* .adopt-btn {
   height: 39px;
   background-color: rgb(190 232 181);
   width: 100px;
   border-radius: 20px;
-}
+} */
 .readmore-btn {
   /* height: 39px;
   width: 100px; */
-  background-color: #eef2ff;
+  background-color: #ffebe1;
   border: 1px solid #ababf9;
   border-radius: 5px;
 }
+.readmore-btn:hover {
+  background-color: #ffebe1;
+}
 
-.adopt-btn-div {
+/* .adopt-btn-div {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -75,4 +85,4 @@
   justify-content: space-around;
   width: 209px;
   margin-top: 20px;
-}
+} */

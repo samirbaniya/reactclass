@@ -1,0 +1,48 @@
+.adopt-btn {
+  /* height: 39px;
+  width: 100px; */
+  background-color: #c0ccf3;
+  border: 1px solid #ababf9;
+  border-radius: 5px;
+  height: 40px;
+  width: 100px;
+}
+.adopt-btn:hover {
+  background-color: #9cb0ef;
+  cursor: pointer;
+}
+.animal-background {
+  background-color: rgb(226 236 255);
+  background-image: linear-gradient(
+    to right,
+    rgb(244 248 255),
+    rgb(244 248 255),
+    rgb(216 224 253),
+    rgb(244 248 255),
+    rgb(216 224 253),
+    rgb(244 248 255),
+    rgb(244 248 255)
+  );
+  display: flex;
+  justify-content: center;
+  padding: 10%;
+}
+.animal-content {
+  padding: 50px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  width: 500px;
+}
+.animal-img {
+  height: 500px;
+  width: 500px;
+  box-shadow: inset 0px 0px 14px 4px #f6f9ff;
+  border-radius: 10px;
+}
+.adopt-btn-div {
+  display: flex;
+  justify-content: center;
+}

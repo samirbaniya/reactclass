@@ -1,0 +1,25 @@
+/* About.css */
+.about-container {
+  padding: 3% 10%;
+  max-width: 800px;
+  margin: 50px auto;
+  background-color: #f7f7f7; /* Subtle background color */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-heading {
+  text-align: center;
+  color: #35495e;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-family: "Arial", sans-serif;
+}
+
+.about-content {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #555;
+  text-align: justify;
+  font-family: "Arial", sans-serif;
+}

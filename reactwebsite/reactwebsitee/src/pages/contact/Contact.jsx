@@ -3,13 +3,11 @@ function Contact() {
   return (
     <div className="contact">
       <section>
-        <h2 className="text-center text-white contact-heading">
-          Send us a Message
-        </h2>
-        <form
-          encType="multipart/form-data"
-          method="post"
-          action=""
+        <h2 className="text-center contact-heading">Send us a Message</h2>
+        <div
+          // encType="multipart/form-data"
+          // method="post"
+          // action="#"
           className="form-horizontal"
         >
           <label htmlFor="">Name</label>
@@ -47,7 +45,7 @@ function Contact() {
             name="submit"
             className="btn text-center btn-primary"
           />
-        </form>
+        </div>
       </section>
     </div>
   );

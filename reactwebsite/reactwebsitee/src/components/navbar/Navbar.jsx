@@ -16,7 +16,6 @@ function Navbar() {
         <NavLink to={"/contact"}>
           <li>Contact</li>
         </NavLink>
-
       </ul>
     </nav>
   );
