@@ -23,7 +23,7 @@ function PetDesccription() {
         <div>Age: {currData.age}</div>
         <div>Color: {currData.color}</div>
         <hr />
-        <div>
+        <div style={{ lineHeight: "1.5rem" }}>
           Description: <br />
           {currData.description}
         </div>

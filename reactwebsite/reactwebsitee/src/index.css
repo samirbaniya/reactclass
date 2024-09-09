@@ -12,7 +12,7 @@ body,
 .wholePage {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  font-family: cursive;
 }
 a {
   text-decoration: none !important;

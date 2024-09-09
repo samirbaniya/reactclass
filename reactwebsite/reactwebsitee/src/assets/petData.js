@@ -149,6 +149,16 @@ const pets = [
     description:
       "Sheru is a dog with good behaviour.He is also well trained.............",
   },
+  {
+    name: "Maddy",
+    id: 16,
+    age: 2,
+    species: "dog",
+    color: "black",
+    image: "/images/dog8.jpg",
+    description:
+      "Sheru is a dog with good behaviour.He is also well trained.............",
+  },
 ];
 
 export default pets;

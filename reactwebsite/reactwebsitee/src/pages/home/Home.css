@@ -1,13 +1,24 @@
 .heading {
-  color: #7387cd;
+  color: white;
+  background: linear-gradient(rgb(255 255 255 / 64%), rgb(50 77 171 / 25%)),
+    url(/images/petbg.jpg);
+  /* background-image: url("/images/petbg.jpg"); */
+  background-size: cover;
+  background-position: 20% 27%;
+  background-repeat: no-repeat;
   text-align: center;
   padding: 50px;
+  height: 5%;
+  border-bottom: 5px solid transparent;
+  border-image: linear-gradient(to right, white, #7695ff) 1;
+  background-color: white;
+  text-shadow: 0 1px 10px #ffffff, 0 0 4px #4d4751;
 }
 .card {
   /* border: 1px solid black; */
   box-shadow: 14px 14px 30px rgba(0, 0, 0, 0.19), 5px 5px 0px #f1f1ff;
   width: 228px;
-  height: 300px;
+  height: 330px;
   margin: 10px;
   border-radius: 10px;
   background-color: white;
@@ -32,7 +43,7 @@
   gap: 10px;
   /* grid-template-columns: 1fr 1fr 1fr; */
   background-color: #f9fbff;
-  padding: 40px 40px 40px 120px;
+  padding: 30px 40px 100px 126px;
 }
 
 .pet-img {
@@ -86,3 +97,61 @@
   width: 209px;
   margin-top: 20px;
 } */
+
+.categories-heading {
+  padding-top: 2%;
+  text-align: center;
+  margin-bottom: 2%;
+}
+.explore-heading {
+  padding-top: 2%;
+  text-align: center;
+  background-color: #f9fbff;
+}
+.categories {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  gap: 2%;
+}
+.categories-container {
+  padding-bottom: 60px;
+}
+
+.categories-card {
+  position: relative;
+  height: 316px;
+  width: 339px;
+  border-radius: 10px;
+  background-color: #7695ff;
+}
+/* .catogories-card:hover {
+  box-shadow: 4px 4px 1px black;
+} */
+.categories-img {
+  left: 0;
+  top: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  transition: 0.5s;
+
+  /* object-fit: cover; */
+}
+.categories-card:hover {
+  transform: scale(1.08);
+  transition: 0.5s;
+}
+
+.float-text {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  text-shadow: 0px 0px 3px white, 2px 2px 15px white;
+}
