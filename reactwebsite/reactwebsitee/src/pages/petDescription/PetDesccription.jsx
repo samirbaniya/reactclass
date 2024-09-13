@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import pets from "../../assets/petData";
+import { NavLink } from "react-router-dom";
 import "./PetDescription.css";
 function PetDesccription() {
   const params = useParams();
@@ -28,9 +29,11 @@ function PetDesccription() {
           {currData.description}
         </div>
         <hr />
-        <div className="adopt-btn-div">
-          <button className="adopt-btn">Adopt</button>
-        </div>
+        <NavLink to={`/adopt/${currData.id}`}>
+          <div className="adopt-btn-div">
+            <button className="adopt-btn">Adopt {currData.name}</button>
+          </div>
+        </NavLink>
       </section>
     </div>
   );

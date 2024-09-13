@@ -3,7 +3,7 @@ header {
   background-image: linear-gradient(to right, white, #7695ff);
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid #3b41fd;
+  border-bottom: 1px solid #b5b8ff;
   border-top: 1px solid #f1f1ff;
 }
 .header {

@@ -1,14 +1,16 @@
 .adopt-btn {
   /* height: 39px;
   width: 100px; */
-  background-color: #c0ccf3;
-  border: 1px solid #ababf9;
+  background-color: #3d5ab9;
+  border: 1px solid #00009d;
   border-radius: 5px;
   height: 40px;
-  width: 100px;
+  width: auto;
+  color: white;
+  font-size: 17px;
 }
 .adopt-btn:hover {
-  background-color: #9cb0ef;
+  background-color: #2c4083;
   cursor: pointer;
 }
 .animal-background {

@@ -1,0 +1,52 @@
+.form-animal {
+  height: 125px;
+}
+.form-animal-img {
+  height: 100%;
+  border-radius: 5px;
+}
+.adopt-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+    to right,
+    rgb(244 248 255),
+    rgb(244 248 255),
+    rgb(216 224 253),
+    rgb(244 248 255),
+    rgb(216 224 253),
+    rgb(244 248 255),
+    rgb(244 248 255)
+  );
+}
+.adopt-form-in {
+  padding: 50px;
+  margin: 50px 0px;
+  background-color: white;
+  width: 400px;
+  border-radius: 20px;
+}
+.adoptform-btn-div {
+  display: flex;
+  justify-content: left;
+  margin-top: 22px;
+}
+.adoptform-btn {
+  background-color: #768dd7;
+  border: 1px solid #8787ff;
+  border-radius: 5px;
+  height: 40px;
+  width: 100px;
+  color: white;
+  font-size: 17px;
+}
+.adoptform-btn:hover {
+  background-color: #3d5ab9;
+  cursor: pointer;
+  border: 1px solid #00009d;
+}
+fieldset {
+  border-radius: 10px;
+  margin: 10px;
+}

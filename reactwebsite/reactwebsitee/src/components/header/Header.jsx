@@ -7,7 +7,12 @@ function Header() {
       <div className="header">
         <section>
           <NavLink to={"/home"}>
-            <img className="logo" src="/images/adoptLogo1.png" alt="logo" />
+            <img
+              id="logo"
+              className="logo"
+              src="/images/adoptLogo1.png"
+              alt="logo"
+            />
           </NavLink>
         </section>
         <Navbar />

@@ -1,0 +1,87 @@
+.user-profile-page {
+  background-color: aliceblue;
+  padding: 72px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.user-profile-page-in {
+  background-color: aliceblue;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+}
+.photo-div {
+  height: 258px;
+  width: 250px;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+}
+.user-description-div {
+  height: 258px;
+  width: 420px;
+  background-color: white;
+  padding: 30px 50px;
+  border-radius: 10px;
+}
+.user-pic {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+.user-pic-div {
+  height: 150px;
+  width: 150px;
+}
+.user-description-line {
+  padding: 10px;
+}
+.edit-pic-btn-div {
+  display: flex;
+  justify-content: left;
+  margin-top: 22px;
+}
+.edit-description-btn-div {
+  display: flex;
+  justify-content: left;
+  margin-top: 22px;
+}
+.edit-pic-btn {
+  background-color: #768dd7;
+  border: 1px solid #8787ff;
+  border-radius: 5px;
+  height: 40px;
+  width: auto;
+  color: white;
+  font-size: 17px;
+}
+.edit-pic-btn:hover {
+  background-color: #5775db;
+  cursor: pointer;
+  border: 1px solid #00009d;
+}
+.edit-desc-btn {
+  background-color: #768dd7;
+  border: 1px solid #8787ff;
+  border-radius: 5px;
+  height: 40px;
+  width: 100px;
+  color: white;
+  font-size: 17px;
+}
+.edit-desc-btn:hover {
+  background-color: #5775db;
+  cursor: pointer;
+  border: 1px solid #00009d;
+}
+.pic-and-username {
+  background-color: #eff1ff;
+  padding: 10px;
+  border-radius: 10px;
+}
+.user-profile-heading {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}

@@ -11,7 +11,13 @@ function Layout() {
       </main>
       <Footer />
       <div>
-        <p style={{ textAlign: "center", backgroundColor: "#728ce5" }}>
+        <p
+          style={{
+            textAlign: "center",
+            backgroundColor: "#728ce5",
+            color: "white",
+          }}
+        >
           © 2024 AdoptBuddy. All Rights Reserved.
         </p>
       </div>

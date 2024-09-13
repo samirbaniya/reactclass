@@ -6,33 +6,38 @@ function About() {
       <h1 className="about-heading">About Adopt Buddy</h1>
       <div className="about-content">
         <p>
-          Welcome to Adopt Buddy, where our passion for pets meets a commitment
-          to making a difference. We believe every pet deserves a loving home,
-          and our mission is to connect compassionate individuals like you with
-          pets in need. Whether you are looking to adopt a dog, cat, or any
-          other furry friend, we are here to help you find the perfect match.
+          Welcome to Adopt Buddy, where our mission is to connect you with pets
+          in need of loving homes. Our platform offers a user-friendly
+          experience for browsing profiles, learning about available pets, and
+          finding your perfect match.
         </p>
         <p>
-          Our team works closely with local shelters and rescue organizations to
-          bring you a wide variety of animals, each with their own unique
-          stories and personalities. We understand that adopting a pet is a
-          significant decision, and we are dedicated to providing a seamless and
-          supportive adoption process. From browsing profiles on our site to
-          finalizing the adoption, we are with you every step of the way.
+          We work closely with a single shelter to ensure that each pet is
+          well-cared for and ready for adoption. Our goal is to make the
+          adoption process as smooth and supportive as possible for both the
+          pets and their new families.
         </p>
+        <h2>Our Services</h2>
         <p>
-          At Adopt Buddy, we also believe in the importance of education and
-          support. Our resources section offers valuable information on pet
-          care, training tips, and advice to help you and your new companion
-          build a strong and happy relationship. We aim to be more than just an
-          adoption platform; we want to be your partner in the journey of pet
-          parenthood.
+          At Adopt Buddy, we provide detailed profiles for each pet, including
+          their age, breed, personality traits, and more. Our website is
+          designed to help you find a pet that fits your lifestyle and
+          preferences. We also offer resources and tips for new pet owners to
+          ensure a successful transition for both you and your new furry friend.
         </p>
+        <h2>Why Choose Us?</h2>
         <p>
-          Join us in our mission to give these wonderful pets a second chance at
-          happiness. Together, we can create a world where every pet has a
-          loving, forever home. Thank you for choosing Adopt Buddy—where
-          companionship begins.
+          Our platform is dedicated to making pet adoption a rewarding
+          experience. With a focus on quality and care, we ensure that every pet
+          on our site is given the attention they deserve. We believe in the
+          power of adoption to change lives and are committed to supporting you
+          in finding your perfect pet companion.
+        </p>
+        <h2>Contact Us</h2>
+        <p>
+          If you have any questions or need assistance, feel free to reach out
+          to us. We`re here to help you through the adoption process and answer
+          any queries you may have. Thank you for choosing Adopt Buddy!
         </p>
       </div>
     </div>

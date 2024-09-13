@@ -150,14 +150,14 @@ const pets = [
       "Sheru is a dog with good behaviour.He is also well trained.............",
   },
   {
-    name: "Maddy",
+    name: "Mitthu",
     id: 16,
-    age: 2,
-    species: "dog",
-    color: "black",
-    image: "/images/dog8.jpg",
+    age: 1,
+    species: "parrot",
+    color: "parrot",
+    image: "/images/parrot.jpg",
     description:
-      "Sheru is a dog with good behaviour.He is also well trained.............",
+      "Mitthu is a parrot with good behaviour,also well trained.............",
   },
 ];
 

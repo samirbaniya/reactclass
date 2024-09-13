@@ -5,6 +5,10 @@ import About from "../../pages/about/About";
 import Contact from "../../pages/contact/Contact";
 import PetDesccription from "../../pages/petDescription/PetDesccription";
 import Animals from "../../pages/animals/animals";
+import PetCategories from "../../pages/petCategories/petCategories";
+import AdoptForm from "../../pages/AdoptForm/AdoptForm";
+import Explore from "../../pages/Explore/Explore";
+import UserProfile from "../../pages/UserProfile/UserProfile";
 
 const router = createBrowserRouter([
   {
@@ -29,12 +33,28 @@ const router = createBrowserRouter([
         element: <PetDesccription />,
       },
       {
+        path: "/categories/:category",
+        element: <PetCategories />,
+      },
+      {
+        path: "/adopt/:id",
+        element: <AdoptForm />,
+      },
+      {
+        path: "/userProfile",
+        element: <UserProfile />,
+      },
+      {
         path: "/about",
         element: <About />,
       },
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/explore",
+        element: <Explore />,
       },
     ],
   },

@@ -41,3 +41,6 @@
 .contact-heading {
   padding: 3% 0;
 }
+textarea {
+  resize: none;
+}

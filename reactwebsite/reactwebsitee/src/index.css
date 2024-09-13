@@ -18,3 +18,8 @@ a {
   text-decoration: none !important;
   color: inherit;
 }
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
