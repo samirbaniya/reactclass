@@ -1,0 +1,28 @@
+.go-to-top-btn {
+  position: fixed;
+  right: 10px;
+  bottom: 30px;
+  width: 40px;
+  height: 40px;
+  background-color: #c7d3ff;
+  border: 1px solid #ababf9;
+  border-radius: 10px;
+  font-family: cursive;
+  font-size: large;
+  padding: 11px 8px;
+  margin-top: 20px;
+}
+
+.go-to-top-btn:hover {
+  background-color: #a0b6ff;
+  cursor: pointer;
+}
+.copyright {
+  text-align: center;
+  background-color: #728ce5;
+  color: white;
+}
+.go-to-top-div {
+  position: relative;
+  background-color: #a0b6ff;
+}

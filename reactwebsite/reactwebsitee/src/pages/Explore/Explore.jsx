@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import pets from "../../assets/petData";
+import Search from "../../components/Search/Search";
 function Explore() {
   const tpets = pets.map((pet) => (
     <div key={pet.id}>
@@ -30,6 +31,7 @@ function Explore() {
           Browse through a variety of animals and find the perfect pet for your
           family and adopt a loving pet.
         </p>
+        <Search />
       </div>
 
       <div>

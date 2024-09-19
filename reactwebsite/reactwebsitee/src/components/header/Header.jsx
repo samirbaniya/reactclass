@@ -16,7 +16,9 @@ function Header() {
           </NavLink>
         </section>
         <Navbar />
-        <button>Login</button>
+        <NavLink to={"/login"}>
+          <p className="login-btn">Login</p>
+        </NavLink>
       </div>
     </header>
   );

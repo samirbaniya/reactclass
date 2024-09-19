@@ -1,8 +1,9 @@
 import "./Home.css";
 import pets from "../../assets/petData";
 import { NavLink } from "react-router-dom";
+import Search from "../../components/Search/Search";
 function Home() {
-  const tpets = pets.slice(0, 8).map((pet) => (
+  const tpets = pets.slice(0, 4).map((pet) => (
     <div key={pet.id}>
       <NavLink to={`/animals/${pet.id}`}>
         <div className="card">
@@ -23,14 +24,16 @@ function Home() {
       </NavLink>
     </div>
   ));
+
   return (
     <>
-      <div className="heading">
+      <div className="heading" id="heading">
         <h1>Find Pet Buddy</h1>
         <p>
           Browse through a variety of animals and find the perfect pet for your
           family and adopt a loving pet.
         </p>
+        <Search />
       </div>
 
       <div className="categories-container">
@@ -75,25 +78,20 @@ function Home() {
             At Adopt Buddy, we believe every pet deserves a loving home, and
             every person deserves a loyal companion. Our mission is to simplify
             the pet adoption process by connecting animals with caring adopters
-            through an our platform. We showcase a wide variety of pets,
-            ensuring potential adopters can find the perfect match based on
-            their preferences. We are passionate about animal welfare and
-            committed to helping shelters animals reach a wider audience. By
-            offering a seamless adoption experience, we strive to improve the
-            lives of animals while creating meaningful connections with their
-            new families. Together, we can create a world where every pet finds
-            a place to call home.
+            through our platform. We showcase a wide variety of pets, ensuring
+            potential adopters can find the perfect match based on their
+            preferences. We are passionate about animal welfare and committed to
+            helping shelters animals reach a wider audience. By offering a
+            seamless adoption experience, we strive to improve the lives of
+            animals while creating meaningful connections with their new
+            families. Together, we can create a world where every pet finds a
+            place to call home.
           </p>
         </section>
       </div>
       <div>
-        <h2 className="explore-heading">Explore Animals</h2>
+        <h2 className="explore-heading">Recommended for you</h2>
         <div className="pet-card">{tpets}</div>
-        <div className="explore-link">
-          <NavLink to={"/explore"}>
-            <button className="explore-btn">Explore more Animals</button>
-          </NavLink>
-        </div>
         <div className="home-description">
           <section className="home-paragraph">
             <h2>Why Adopt?</h2>
@@ -109,16 +107,13 @@ function Home() {
             </p>
           </section>
         </div>
-        <h2 className="explore-heading">Recommended for you</h2>
+        <h2 className="explore-heading">Explore Animals</h2>
         <div className="pet-card">{tpets}</div>
-
-        <button
-          onClick={() => {
-            window.scroll({ top: 0, left: 0, behavior: "smooth" });
-          }}
-        >
-          Go to top
-        </button>
+        <div className="explore-link">
+          <NavLink to={"/explore"}>
+            <button className="explore-btn">Explore more Animals</button>
+          </NavLink>
+        </div>
       </div>
     </>
   );

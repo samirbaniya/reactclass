@@ -9,6 +9,8 @@ import PetCategories from "../../pages/petCategories/petCategories";
 import AdoptForm from "../../pages/AdoptForm/AdoptForm";
 import Explore from "../../pages/Explore/Explore";
 import UserProfile from "../../pages/UserProfile/UserProfile";
+import Login from "../../pages/login/Login";
+import Signup from "../../pages/signup/Signup";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +57,14 @@ const router = createBrowserRouter([
       {
         path: "/explore",
         element: <Explore />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
       },
     ],
   },

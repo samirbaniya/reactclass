@@ -3,8 +3,8 @@
 }
 body,
 #root {
-  height: 100vh;
-  overflow: auto;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 .flex {
   display: flex;
@@ -22,4 +22,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+main {
+  padding-top: 97px;
 }

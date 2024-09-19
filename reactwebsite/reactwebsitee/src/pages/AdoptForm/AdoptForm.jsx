@@ -69,7 +69,7 @@ function AdoptForm() {
               <br />
               <br />
 
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">Email:</label>
               <input type="email" name="email" id="email" />
               <br />
               <br />

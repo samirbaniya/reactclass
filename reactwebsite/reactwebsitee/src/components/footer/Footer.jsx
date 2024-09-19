@@ -21,11 +21,39 @@ function Footer() {
       </div>
 
       <div>
-        Other Links
-        <ul>
-          <li>...</li>
-          <li>...</li>
-          <li>...</li>
+        {/* <div className="center-content">Other Links</div> */}
+        <ul className="social">
+          <li>
+            <a
+              href="https://www.facebook.com/samir.baniya.104"
+              target=" _blank"
+            >
+              <img
+                className="fb-img"
+                src="https://img.icons8.com/fluency/48/000000/facebook-new.png"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/channel/UCOavj2A6g98P4t_ImSCI_5Q"
+              target=" _blank"
+            >
+              <img
+                className="yt-img"
+                src="https://img.icons8.com/fluency/48/000000/youtube-play.png"
+              />
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.instagram.com/samir_baniya_/" target=" _blank">
+              <img
+                className="insta-img"
+                src="https://img.icons8.com/fluency/48/000000/instagram-new.png"
+              />
+            </a>
+          </li>
         </ul>
       </div>
       <div>

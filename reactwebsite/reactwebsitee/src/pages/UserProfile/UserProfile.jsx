@@ -17,7 +17,7 @@ function UserProfile() {
               <div style={{ textAlign: "center" }}>Samir</div>
             </div>
             <div className="edit-pic-btn-div">
-              <button className="edit-pic-btn">Change Profile Picture </button>
+              <button className="edit-pic-btn">Change Profile Picture</button>
             </div>
           </div>
         </div>

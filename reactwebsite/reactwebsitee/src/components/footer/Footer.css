@@ -7,3 +7,25 @@ footer {
   color: white;
   font-size: larger;
 }
+.social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 129px;
+  gap: 19px;
+}
+.social li {
+  list-style-type: none;
+}
+.fb-img:hover {
+  background-color: #0680dd;
+  border-radius: 10px;
+}
+.yt-img:hover {
+  background-color: #ea2f3e;
+  border-radius: 5px;
+}
+.insta-img:hover {
+  background-color: #ff7645;
+  border-radius: 10px;
+}

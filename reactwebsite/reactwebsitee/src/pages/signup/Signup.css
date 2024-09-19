@@ -1,0 +1,69 @@
+/* Center content vertically and horizontally */
+.signup-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7f7f7;
+  padding: 100px;
+}
+
+/* Style for the signup container */
+.inner-divs {
+  border: 1px solid #ddd;
+  padding: 40px;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 350px;
+}
+
+/* Style for the heading */
+.signup-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Style for the input fields */
+.input-fields {
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #d1d1d1;
+  font-size: 1rem;
+}
+
+/* Style for the signup button */
+.signup-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #768dd7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Button hover effect */
+.signup-btn:hover {
+  background-color: #5775db;
+}
+
+/* Link to the login page */
+.login-link {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.login-link a {
+  color: #7997ff;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}

@@ -8,10 +8,11 @@ function Navbar() {
         <NavLink to={"/home"}>
           <li>Home</li>
         </NavLink>
-        
+
         <NavLink to={"/about"}>
           <li>About Us</li>
         </NavLink>
+
         <NavLink to={"/explore"}>
           <li>Explore Pets</li>
         </NavLink>
