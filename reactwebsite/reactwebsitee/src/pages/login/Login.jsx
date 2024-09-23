@@ -2,6 +2,10 @@ import { NavLink } from "react-router-dom";
 import "./Login.css";
 
 function Login() {
+  function loginGranted() {
+    localStorage.setItem("token", "loggedin");
+    // window.location.reload();
+  }
   return (
     <div className="center-contents login-page">
       <div className="inner-div">
@@ -21,7 +25,12 @@ function Login() {
         />
         <br />
         <NavLink to={"/home"}>
-          <button type="submit" name="login" className="logins-btn">
+          <button
+            onClick={loginGranted}
+            type="submit"
+            name="login"
+            className="logins-btn"
+          >
             LOGIN
           </button>
         </NavLink>

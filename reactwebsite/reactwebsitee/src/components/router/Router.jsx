@@ -1,7 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "../layout/Layout";
 import Home from "../../pages/home/Home";
-import About from "../../pages/about/About";
 import Contact from "../../pages/contact/Contact";
 import PetDesccription from "../../pages/petDescription/PetDesccription";
 import Animals from "../../pages/animals/animals";
@@ -11,6 +10,9 @@ import Explore from "../../pages/Explore/Explore";
 import UserProfile from "../../pages/UserProfile/UserProfile";
 import Login from "../../pages/login/Login";
 import Signup from "../../pages/signup/Signup";
+import Recommended from "../../pages/RecommendPage/Recommended";
+import Protected from "../protected/Protected";
+import About from "../../pages/about/About";
 
 const router = createBrowserRouter([
   {
@@ -44,7 +46,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/userProfile",
-        element: <UserProfile />,
+        element: (
+          <Protected>
+            <UserProfile />
+          </Protected>
+        ),
       },
       {
         path: "/about",
@@ -65,6 +71,10 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup />,
+      },
+      {
+        path: "/recommended",
+        element: <Recommended />,
       },
     ],
   },

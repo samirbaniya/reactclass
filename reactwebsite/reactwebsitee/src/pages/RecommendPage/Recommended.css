@@ -1,0 +1,32 @@
+/* .pet-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.pet-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pet-image {
+  width: 100px;
+  height: auto;
+  border-radius: 10px;
+}
+
+h3 {
+  margin-top: 10px;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.pet-card p {
+  font-size: 1rem;
+  color: #666;
+} */
