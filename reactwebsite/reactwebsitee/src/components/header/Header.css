@@ -19,9 +19,9 @@ header {
 .logo {
   height: 50px;
 }
-.logo:hover {
+/* .logo:hover {
   box-shadow: 1px 1px 1px #cbd5ff;
-}
+} */
 .login-btn {
   color: black;
   font-size: 1.3rem;

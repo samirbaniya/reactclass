@@ -31,6 +31,7 @@ function Footer() {
               <img
                 className="fb-img"
                 src="https://img.icons8.com/fluency/48/000000/facebook-new.png"
+                alt="fb-link"
               />
             </a>
           </li>
@@ -42,6 +43,7 @@ function Footer() {
               <img
                 className="yt-img"
                 src="https://img.icons8.com/fluency/48/000000/youtube-play.png"
+                alt="yt-link"
               />
             </a>
           </li>
@@ -51,6 +53,7 @@ function Footer() {
               <img
                 className="insta-img"
                 src="https://img.icons8.com/fluency/48/000000/instagram-new.png"
+                alt="insta-link"
               />
             </a>
           </li>
