@@ -22,9 +22,6 @@ function Navbar() {
         <NavLink to={"/contact"}>
           <li>Contact</li>
         </NavLink>
-        <NavLink to={"/userProfile"}>
-          <li>Profile</li>
-        </NavLink>
       </ul>
     </nav>
   );

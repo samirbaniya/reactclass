@@ -2,6 +2,8 @@ import "./Home.css";
 import pets from "../../assets/petData";
 import { NavLink } from "react-router-dom";
 import Search from "../../components/Search/Search";
+import Recomender from "../Recommend/Recomender";
+
 function Home() {
   const tpets = pets.slice(0, 4).map((pet) => (
     <div key={pet.id}>
@@ -90,8 +92,8 @@ function Home() {
         </section>
       </div>
       <div>
-        <h2 className="explore-heading">Recommended for you</h2>
-        <div className="pet-card">{tpets}</div>
+        {/* <h2 className="explore-heading">Recommended for you</h2> */}
+        <Recomender showData={4} />
         <div className="home-description">
           <section className="home-paragraph">
             <h2>Why Adopt?</h2>
