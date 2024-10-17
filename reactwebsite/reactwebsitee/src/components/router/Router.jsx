@@ -13,6 +13,7 @@ import Signup from "../../pages/signup/Signup";
 import Recommended from "../../pages/RecommendPage/Recommended";
 import Protected from "../protected/Protected";
 import About from "../../pages/about/About";
+import Recommend from "../../pages/Recommend/Recommend";
 
 const router = createBrowserRouter([
   {
@@ -75,6 +76,10 @@ const router = createBrowserRouter([
       {
         path: "/recommended",
         element: <Recommended />,
+      },
+      {
+        path: "/recommend",
+        element: <Recommend />,
       },
     ],
   },

@@ -2,7 +2,7 @@ const pets = [
   {
     name: "Max",
     id: 1,
-    age: 2,
+    age: 9,
     species: "dog",
     color: "black",
     image: "/images/dog1.jpg",
@@ -12,7 +12,7 @@ const pets = [
   {
     name: "Kale",
     id: 2,
-    age: 3,
+    age: 4,
     species: "cat",
     color: "white",
     image: "/images/catt.png",
@@ -24,7 +24,7 @@ const pets = [
     id: 3,
     age: 2,
     species: "dog",
-    color: "black",
+    color: "white",
     image: "/images/dogg.png",
     description:
       "Ratey is a dog with good behaviour.He is also well trained.lorem",

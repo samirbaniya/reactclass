@@ -12,6 +12,9 @@ function Navbar() {
         <NavLink to={"/about"}>
           <li>About Us</li>
         </NavLink>
+        <NavLink to={"/recommend"}>
+          <li>Recommended Pets</li>
+        </NavLink>
 
         <NavLink to={"/explore"}>
           <li>Explore Pets</li>
