@@ -94,6 +94,12 @@ function Home() {
       <div>
         {/* <h2 className="explore-heading">Recommended for you</h2> */}
         <Recomender showData={4} />
+        <div className="explore-link">
+          <NavLink to={"/recommend"}>
+            <button className="explore-btn">More recomended Animals</button>
+          </NavLink>
+        </div>
+
         <div className="home-description">
           <section className="home-paragraph">
             <h2>Why Adopt?</h2>

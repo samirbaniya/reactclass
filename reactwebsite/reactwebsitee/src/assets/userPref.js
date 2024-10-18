@@ -1,7 +1,7 @@
 const userPref = [
   {
     prefage: 2,
-    prefspecies: "dog",
+    prefspecies: "parrot",
     prefcolor: "white",
   },
 ];

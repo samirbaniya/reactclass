@@ -8,14 +8,14 @@ function Recomender(props) {
     let p1 = 0;
     let u1 = 1;
     let p2 = 0;
-    let u2 = 1;
+    let u2 = 2;
     let p3 = 0;
     let u3 = 1;
     if (pet.age === userPref.prefage) {
       p1 = 1;
     }
     if (pet.species === userPref.prefspecies) {
-      p2 = 1;
+      p2 = 2;
     }
     if (pet.color === userPref.prefcolor) {
       p3 = 1;
@@ -56,6 +56,7 @@ function Recomender(props) {
       <h2 className="explore-heading">Recommended Pets</h2>
       <div className="pet-card">
         {petsWithSimilarity
+          // eslint-disable-next-line react/prop-types
           .slice(0, props.showData)
           .map(({ pet, similarity }) => (
             <div key={pet.id}>
