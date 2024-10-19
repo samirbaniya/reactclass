@@ -1,0 +1,25 @@
+.custom-card {
+  margin-top: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(193 193 193);
+  max-width: fit-content;
+  border-radius: 8px;
+}
+.title {
+  color: #000000;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.home {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin: 80px 0px;
+}

@@ -1,0 +1,29 @@
+.outerDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #dcdcfd;
+}
+.innerDiv {
+  height: 350px;
+  width: 350px;
+  border: 1px solid black;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: #f99145;
+}
+.image {
+  height: 270px;
+  width: 270px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+.button {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}

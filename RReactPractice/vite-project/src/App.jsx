@@ -3,10 +3,12 @@
 // import RouteApp from "./extra/1/RouteApp/RouteApp";
 // import RouterDomApp from "./extra/0/RouterDomApp";
 // import CustomMap from "./extra/1/CustomMap";
+// import StudentCard from "./extra/1/StudentCard";
+
+import RoutingAnotherWay from "./extra/2/routingAnotherWay/RoutingAnotherWay";
 
 
 
-import StudentCard from "./extra/1/StudentCard";
 
 function App() {
   return (
@@ -16,7 +18,8 @@ function App() {
       {/* <RouteApp /> */}
       {/* <RouterDomApp/> */}
       {/* <CustomMap/> */}
-      <StudentCard/>
+      {/* <StudentCard/> */}
+      <RoutingAnotherWay/>
     </>
   );
 }
