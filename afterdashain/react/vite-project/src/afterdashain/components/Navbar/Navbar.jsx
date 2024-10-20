@@ -24,6 +24,10 @@ function Navbar() {
         <NavLink to={"/RedPanda"}>
           <li>Red Panda</li>
         </NavLink>
+
+        <NavLink to={"/photos"}>
+          <li>Photos</li>
+        </NavLink>
       </ul>
     </div>
   );

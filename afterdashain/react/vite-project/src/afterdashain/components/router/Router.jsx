@@ -5,6 +5,7 @@ import Cat from "../../pages/cat/Cat";
 import Jokes from "../../pages/jokes/Jokes";
 import Bird from "../../pages/bird/Bird";
 import RedPanda from "../../pages/RedPanda/RedPanda";
+import Photos from "../../pages/photos/Photos";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/RedPanda",
         element: <RedPanda />,
+      },
+      {
+        path: "/photos",
+        element: <Photos />,
       },
     ],
   },
