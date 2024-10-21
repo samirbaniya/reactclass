@@ -13,6 +13,15 @@ function AllCarts() {
     } catch (error) {
       setError("Error fetching data");
     }
+
+
+
+
+
+
+
+
+    
   }
   const products = data.map((cart) => (
     <div style={{ border: "1px solid black", margin: "10px" }} key={cart.id}>

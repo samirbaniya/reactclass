@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-function AllUsers() {
+function LimitedUsers() {
   const apiUrl = import.meta.env.VITE_BASE_URL;
   const [error, setError] = useState(null);
   const [data, setData] = useState([]);
   async function fetchProducts() {
     try {
-      const data = await fetch(apiUrl + "/users");
+      const data = await fetch(apiUrl + "/users?limit=5");
       const finaldata = await data.json();
       setData(finaldata);
       // eslint-disable-next-line no-unused-vars
@@ -14,10 +14,6 @@ function AllUsers() {
       setError("Error fetching data");
     }
   }
-  useEffect(() => {
-    fetchProducts();
-  }, []);
-
   const users = data.map((user) => (
     <div style={{ border: "1px solid black", margin: "10px" }} key={user.id}>
       <p>id:{user.id}</p>
@@ -34,9 +30,9 @@ function AllUsers() {
     <>
       <div style={{ color: "red" }}>{error}</div>
       {users}
-      {/* <button onClick={fetchProducts}>All Users</button> */}
+      <button onClick={fetchProducts}>Limited Users</button>
     </>
   );
 }
 
-export default AllUsers;
+export default LimitedUsers;
