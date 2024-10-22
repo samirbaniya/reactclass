@@ -2,7 +2,7 @@
 
 // import Practice from "./apipractice/01/practice/practice";
 import Router from "./apipractice/components/router/Router";
-
+import "./app.css";
 function App() {
   return (
     <div>

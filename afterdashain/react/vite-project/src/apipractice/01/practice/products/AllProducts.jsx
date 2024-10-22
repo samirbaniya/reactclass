@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function AllProducts() {
   const apiUrl = import.meta.env.VITE_BASE_URL;
   const [error, setError] = useState(null);
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
+
   async function fetchProducts() {
     try {
       const data = await fetch(apiUrl + "/products");
@@ -14,17 +17,40 @@ function AllProducts() {
       setError("Error fetching data");
     }
   }
+  useEffect(() => {
+    fetchProducts();
+  }, []);
   const products = data.map((product) => (
-    <div style={{ border: "1px solid black", margin: "10px" }} key={product.id}>
-      <h2>{product.name}</h2>
-      <p>{product.description}</p>
+    <div
+      onClick={() => navigate("/products/" + product.id)}
+      className="product-card"
+      key={product.id}
+    >
+      {product.id && (
+        <>
+          <div className="image-div">
+            <h3 style={{ textAlign: "center", marginBottom: "20px" }}>
+              {product.category}
+            </h3>
+            <img
+              className="product-img"
+              src={product.image}
+              alt={product.title}
+            />
+          </div>
+          <h2 className="product-name">{product.title}</h2>
+          <h3 className="product-price">Price: ${product.price}</h3>
+          <h3>
+            Ratings: {product.rating.rate} {`(${product.rating.count})`}
+          </h3>
+        </>
+      )}
     </div>
   ));
   return (
     <>
-      <div style={{ color: "red" }}>{error}</div>
-      {products}
-      <button onClick={fetchProducts}>All Products</button>
+      <div>{error}</div>
+      <div className="product-container">{products}</div>
     </>
   );
 }

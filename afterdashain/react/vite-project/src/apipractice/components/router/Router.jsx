@@ -3,6 +3,7 @@ import Navbar from "../Navbar/Navbar";
 import Product from "../../01/practice/products/Product";
 import Cart from "../../01/practice/carts/Cart";
 import User from "../../01/practice/users/User";
+import SingleProduct from "../../01/practice/products/SingleProduct";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
     ),
     children: [
       {
+        path: "/",
+        element: <Product />,
+      },
+      {
         path: "/Products",
         element: <Product />,
       },
@@ -25,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/Users",
         element: <User />,
+      },
+      {
+        path: "/products/:id",
+        element: <SingleProduct />,
       },
     ],
   },

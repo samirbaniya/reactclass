@@ -1,19 +1,19 @@
-import AllCategories from "./AllCategories";
+// import AllCategories from "./AllCategories";
 import AllProducts from "./AllProducts";
-import LimitedProduct from "./LimitedProduct";
-import SingleProduct from "./SingleProduct";
-import SortedinDesc from "./SortedinDesc";
-import SpecificCategory from "./SpecificCategory";
+// import LimitedProduct from "./LimitedProduct";
+// import SingleProduct from "./SingleProduct";
+// import SortedinDesc from "./SortedinDesc";
+// import SpecificCategory from "./SpecificCategory";
 
 function Product() {
   return (
     <div>
       <AllProducts />
-      <SingleProduct />
+      {/* <SingleProduct />
       <LimitedProduct />
       <SortedinDesc />
       <AllCategories />
-      <SpecificCategory />
+      <SpecificCategory /> */}
     </div>
   );
 }
