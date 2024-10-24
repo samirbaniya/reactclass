@@ -1,46 +1,103 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Loader from "../../../components/Loader";
 
 function UserCart() {
   const apiUrl = import.meta.env.VITE_BASE_URL;
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [data, setData] = useState([]);
-  async function fetchProducts() {
+  const [products, setProducts] = useState([]);
+  const [total, setTotal] = useState([]);
+  // Fetch user cart data
+  async function fetchCart() {
     try {
-      const data = await fetch(apiUrl + "/carts/user/2");
-      const finaldata = await data.json();
-      setData(finaldata);
+      setLoading(true);
+      setError(null); // Reset error state before fetching
+      const response = await fetch(apiUrl + "/carts/user/2");
+      const data = await response.json();
+      await fetchProducts(data);
       // eslint-disable-next-line no-unused-vars
     } catch (error) {
-      setError("Error fetching data");
+      setError("Error fetching cart data");
+    } finally {
+      setLoading(false);
     }
   }
 
-  const ucarts = data.map((cart) => (
-    <div style={{ border: "1px solid black", margin: "10px" }} key={cart.id}>
-      <p>id: {cart.id}</p>
-      <p>UserId:{cart.userId}</p>
-      <p>Date:{cart.date}</p>
-      <div>
-        {cart.products.map((product) => (
-          <div
-            style={{ border: "1px solid black", margin: "10px" }}
-            key={product.productId}
-          >
-            <p>Product Id:{product.productId}</p>
-            <p>Product Quantity{product.quantity}</p>
-          </div>
-        ))}
+  // Fetch product data
+  async function fetchProducts(datafromcart) {
+    try {
+      setError(null); // Reset error state before fetching
+      const response = await fetch(apiUrl + "/products/");
+      const productData = await response.json();
+
+      let filteredData = [];
+      let total = 0;
+      productData.forEach((element) => {
+        datafromcart[0]?.products?.forEach((cartProd) => {
+          if (cartProd.productId === element.id) {
+            filteredData.push({ ...element, quantity: cartProd.quantity });
+            total = total + cartProd.quantity * element.price;
+          }
+        });
+      });
+      setTotal(total);
+      setProducts(filteredData);
+    } catch (error) {
+      console.log(error);
+      setError("Error fetching products");
+    }
+  }
+
+  // console.log(products);
+  useEffect(() => {
+    fetchCart();
+  }, []);
+
+  const ucarts = products.map((product) => (
+    <div key={product.id}>
+      <div className="cart-product-div">
+        <div className="cart-img-div">
+          <img
+            src={product.image}
+            alt={product.title}
+            style={{ width: "50px" }}
+          />
+        </div>
+        <div className="cart-product-description">
+          <p className="cart-product-name">{product.title}</p>
+          <p className="cart-product-category">{product.category}</p>
+          <p className="cart-product-price">Price: ${product.price}</p>
+          <p>Quantity: {product.quantity}</p>
+          <p>Total Price: ${product.quantity * product.price}</p>
+        </div>
       </div>
     </div>
   ));
-
+  if (error) {
+    return <>Error...</>;
+  }
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <>
       <div style={{ color: "red" }}>{error}</div>
-      <div>
-        <p>{ucarts}</p>
+
+      <div className="cart-product-container">
+        <div style={{ display: "flex", flexDirection: "column" }}>{ucarts}</div>
+        <div className="order-summary">
+          <p style={{ color: "green", fontWeight: "bold", fontSize: "25px" }}>
+            Order Summary
+          </p>
+          <hr />
+          <p className="cart-product-price">
+            {products.map((prod, index) => (
+              <div key={index}>{prod.title}</div>
+            ))}
+          </p>
+          <p className="cart-product-price">Grand Total: {total}</p>
+        </div>
       </div>
-      <button onClick={fetchProducts}>User Cart</button>
     </>
   );
 }

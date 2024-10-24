@@ -1,18 +1,18 @@
-import AllCarts from "./AllCarts";
-import CartsinDateRange from "./CartsinDateRange";
-import LimitedCart from "./LimitedCart";
-import SingleCart from "./SingleCart";
-import SortedCarts from "./SortedCarts";
+// import AllCarts from "./AllCarts";
+// import CartsinDateRange from "./CartsinDateRange";
+// import LimitedCart from "./LimitedCart";
+// import SingleCart from "./SingleCart";
+// import SortedCarts from "./SortedCarts";
 import UserCart from "./UserCart";
 
 function Cart() {
   return (
     <div>
-      <AllCarts />
+      {/* <AllCarts />
       <SingleCart />
       <LimitedCart />
       <SortedCarts />
-      <CartsinDateRange />
+      <CartsinDateRange /> */}
       <UserCart />
     </div>
   );

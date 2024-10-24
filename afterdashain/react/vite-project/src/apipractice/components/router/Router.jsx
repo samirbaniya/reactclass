@@ -9,7 +9,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <div>
+      <div style={{ height: "100vh" }}>
         <Navbar />
         <Outlet />
       </div>

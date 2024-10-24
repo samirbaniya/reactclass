@@ -1,20 +1,26 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Loader from "../../../components/Loader";
 
 function AllProducts() {
   const apiUrl = import.meta.env.VITE_BASE_URL;
   const [error, setError] = useState(null);
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   const navigate = useNavigate();
 
   async function fetchProducts() {
     try {
+      setLoading(true);
       const data = await fetch(apiUrl + "/products");
       const finaldata = await data.json();
       setData(finaldata);
       // eslint-disable-next-line no-unused-vars
     } catch (error) {
       setError("Error fetching data");
+    }finally {
+      setLoading(false);
     }
   }
   useEffect(() => {
@@ -47,6 +53,12 @@ function AllProducts() {
       )}
     </div>
   ));
+  if (error) {
+    return <>Error...</>;
+  }
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <>
       <div>{error}</div>
