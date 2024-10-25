@@ -87,7 +87,7 @@
   /* justify-content: center; */
   /* align-items: center; */
   background-color: #f5f5f5;
-  padding: 20px 0px;
+  padding: 40px 0px;
 }
 
 /* .cart-div {
@@ -111,7 +111,7 @@
   width: 50vw;
   gap: 0px;
   background-color: white;
-  margin: 20px;
+  margin: 3px 20px;
 }
 
 .cart-product-img {
@@ -148,7 +148,7 @@
 }
 
 .cart-product-price {
-  color: green;
+  /* color: green; */
   font-weight: bold;
 }
 
@@ -161,10 +161,10 @@
   /* justify-content: center; */
   /* align-items: center; */
   width: 35vw;
-  height: 298px;
+  height: fit-content;
   gap: 20px;
   background-color: white;
-  margin-top: 20px;
+  margin-top: 3px;
 } /* cart page end */
 
 /* ---------------------------------------------------------------------------------------------- */
@@ -199,3 +199,40 @@
 }
 /* loader end*/
 /* -------------------------------------------------------------------------------------- */
+
+/* ErrorPage */
+
+.error-message {
+  font-size: xx-large;
+  font-weight: bold;
+  font-family: cursive;
+  position: relative;
+}
+
+.error-message::after {
+  content: "Error"; /* Default content */
+  position: absolute;
+  left: 48vw;
+  top: 46vh;
+  animation: errorAnimation 3s infinite;
+}
+
+@keyframes errorAnimation {
+  0% {
+    content: "Error";
+  }
+  25% {
+    content: "Error.";
+  }
+  50% {
+    content: "Error..";
+  }
+  75% {
+    content: "Error...";
+  }
+  100% {
+    content: "Error...";
+  }
+}
+
+/* ErrorPage end*/

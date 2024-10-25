@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Loader from "../../../components/Loader";
+import ErrorPage from "../../../components/ErrorPage";
 
 function UserCart() {
   const apiUrl = import.meta.env.VITE_BASE_URL;
@@ -74,30 +75,59 @@ function UserCart() {
     </div>
   ));
   if (error) {
-    return <>Error...</>;
+    return (
+      <>
+        <ErrorPage />
+      </>
+    );
   }
   if (loading) {
     return <Loader />;
   }
   return (
     <>
-      <div style={{ color: "red" }}>{error}</div>
+      {/* <div style={{ color: "red" }}>{error}</div> */}
 
-      <div className="cart-product-container">
-        <div style={{ display: "flex", flexDirection: "column" }}>{ucarts}</div>
-        <div className="order-summary">
-          <p style={{ color: "green", fontWeight: "bold", fontSize: "25px" }}>
-            Order Summary
-          </p>
-          <hr />
-          <p className="cart-product-price">
-            {products.map((prod, index) => (
-              <div key={index}>{prod.title}</div>
-            ))}
-          </p>
-          <p className="cart-product-price">Grand Total: {total}</p>
+      {products.length === 0 && !loading && !error ? (
+        <p>Your cart is empty</p>
+      ) : (
+        <div className="cart-product-container">
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            {ucarts}
+          </div>
+          <div className="order-summary">
+            <p style={{ color: "green", fontWeight: "bold", fontSize: "25px" }}>
+              Order Summary
+            </p>
+            <hr />
+            <div className="cart-product-price">
+              {products.map((prod, index) => (
+                <div key={index}>
+                  <div style={{ padding: "10px" }}>
+                    {prod.title}
+                    <p
+                      style={{
+                        backgroundColor: "green",
+                        color: "white",
+                        padding: "10px",
+                        width: "fit-content",
+                        margin: "10px",
+                        minWidth: "100px",
+                      }}
+                    >
+                      {prod.quantity} items = ${prod.price * prod.quantity}
+                    </p>
+                  </div>
+                  <hr />
+                </div>
+              ))}
+            </div>
+            <p className="cart-product-price">
+              Grand Total: ${total.toFixed(2)}
+            </p>
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 }
