@@ -5,7 +5,7 @@
   justify-content: left;
   padding-left: 10px;
   background-color: #e1e1e1;
-  padding: 50px 0px;
+  padding: 50px 14px;
 }
 
 .product-card {
@@ -236,3 +236,55 @@
 }
 
 /* ErrorPage end*/
+/* ---------------------------------------------------------------------------------- */
+
+/* UserPage */
+.user-table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 20px;
+}
+tr {
+  cursor: pointer;
+}
+/* UserPage end */
+/* --------------------------------------------------------------------------------------- */
+
+/* User Modal */
+.user-modal {
+  position: absolute;
+  right: 0;
+  border: none;
+  background: transparent;
+}
+
+.modal-content {
+  position: fixed;
+  top: 20vh;
+  left: 34vw;
+  padding: 74px 21px 57px 89px;
+  border-radius: 10px;
+  background-color: #fff;
+  height: 260px;
+  width: 308px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.moderl-btn {
+  position: absolute;
+  top: 39px;
+  right: 51px;
+  background: #ff3d3d;
+  color: white;
+  cursor: pointer;
+}
+
+/* .outer-div {
+  background-color: rgba(0, 0, 0, 0.2);
+} */
+/* User Modal End */
+/* --------------------------------------------------------------------------------------- */

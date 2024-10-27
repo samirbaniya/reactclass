@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Loader from "../../../components/Loader";
+import ErrorPage from "../../../components/ErrorPage";
 
 function AllProducts() {
   const apiUrl = import.meta.env.VITE_BASE_URL;
@@ -19,7 +20,7 @@ function AllProducts() {
       // eslint-disable-next-line no-unused-vars
     } catch (error) {
       setError("Error fetching data");
-    }finally {
+    } finally {
       setLoading(false);
     }
   }
@@ -54,7 +55,11 @@ function AllProducts() {
     </div>
   ));
   if (error) {
-    return <>Error...</>;
+    return (
+      <>
+        <ErrorPage />
+      </>
+    );
   }
   if (loading) {
     return <Loader />;

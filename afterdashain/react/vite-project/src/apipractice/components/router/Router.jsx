@@ -4,6 +4,7 @@ import Product from "../../01/practice/products/Product";
 import Cart from "../../01/practice/carts/Cart";
 import User from "../../01/practice/users/User";
 import SingleProduct from "../../01/practice/products/SingleProduct";
+import FormDemo from "../../02/FormDemo";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/products/:id",
         element: <SingleProduct />,
+      },
+      {
+        path: "/form",
+        element: <FormDemo />,
       },
     ],
   },

@@ -16,9 +16,8 @@ function UserCart() {
       const response = await fetch(apiUrl + "/carts/user/2");
       const data = await response.json();
       await fetchProducts(data);
-      // eslint-disable-next-line no-unused-vars
     } catch (error) {
-      setError("Error fetching cart data");
+      setError(error);
     } finally {
       setLoading(false);
     }

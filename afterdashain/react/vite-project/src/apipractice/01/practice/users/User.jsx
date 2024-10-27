@@ -1,14 +1,14 @@
 import AllUsers from "./AllUsers";
-import LimitedUsers from "./LimitedUsers";
-import SortedUsers from "./SortedUsers";
-import SingleUser from "./SingleUser";
+// import LimitedUsers from "./LimitedUsers";
+// import SortedUsers from "./SortedUsers";
+// import SingleUser from "./SingleUser";
 
 function User() {
   return (
     <div>
-      <SingleUser />
+      {/* <SingleUser />
       <LimitedUsers />
-      <SortedUsers />
+      <SortedUsers /> */}
       <AllUsers />
     </div>
   );
