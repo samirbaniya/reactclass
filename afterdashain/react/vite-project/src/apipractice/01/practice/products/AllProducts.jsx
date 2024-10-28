@@ -8,15 +8,35 @@ function AllProducts() {
   const [error, setError] = useState(null);
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [categorylist, setCategoryList] = useState([]);
+  const [category, setCategory] = useState();
+  const [limit, setLimit] = useState(20);
 
   const navigate = useNavigate();
+  async function fetchCategoryList() {
+    try {
+      const data = await fetch(apiUrl + "/products/categories");
+      if (!data.ok) {
+        throw new Error("Error while fetching category");
+      }
+      const finaldata = await data.json();
+      setCategoryList(finaldata);
+      // eslint-disable-next-line no-unused-vars
+    } catch (error) {
+      setError("Error fetching data");
+    }
+  }
 
-  async function fetchProducts() {
+  async function fetchProducts(params = "") {
     try {
       setLoading(true);
-      const data = await fetch(apiUrl + "/products");
+      const data = await fetch(apiUrl + "/products" + params);
+      if (!data.ok) {
+        throw new Error("Error while fetching products");
+      }
       const finaldata = await data.json();
       setData(finaldata);
+      setLimit(finaldata.length);
       // eslint-disable-next-line no-unused-vars
     } catch (error) {
       setError("Error fetching data");
@@ -26,6 +46,7 @@ function AllProducts() {
   }
   useEffect(() => {
     fetchProducts();
+    fetchCategoryList();
   }, []);
   const products = data.map((product) => (
     <div
@@ -36,9 +57,6 @@ function AllProducts() {
       {product.id && (
         <>
           <div className="image-div">
-            <h3 style={{ textAlign: "center", marginBottom: "20px" }}>
-              {product.category}
-            </h3>
             <img
               className="product-img"
               src={product.image}
@@ -47,6 +65,7 @@ function AllProducts() {
           </div>
           <h2 className="product-name">{product.title}</h2>
           <h3 className="product-price">Price: ${product.price}</h3>
+          <h3>Category: {product.category}</h3>
           <h3>
             Ratings: {product.rating.rate} {`(${product.rating.count})`}
           </h3>
@@ -67,7 +86,63 @@ function AllProducts() {
   return (
     <>
       <div>{error}</div>
-      <div className="product-container">{products}</div>
+
+      <div>
+        <div className="filters">
+          <select
+            value={category}
+            onChange={(e) => {
+              if (e.target.value === "") {
+                fetchProducts();
+              } else {
+                fetchProducts(`/category/${e.target.value}`);
+              }
+              setCategory(e.target.value);
+            }}
+          >
+            <option value={""}>All</option>
+            {categorylist.map((item, index) => (
+              <option value={item} key={index}>
+                {item.toUpperCase()}
+              </option>
+            ))}
+          </select>
+          <div>
+            Sort:
+            <button onClick={() => fetchProducts("?sort=asc")}>
+              Ascending
+            </button>
+            <button onClick={() => fetchProducts("?sort=desc")}>
+              Descending
+            </button>
+          </div>
+          <div>
+            <button
+              onClick={() => {
+                setLimit((limit) => {
+                  fetchProducts(`?limit=${limit - 1}`);
+                  return limit === 0 ? 0 : limit - 1;
+                });
+              }}
+            >
+              -
+            </button>
+            {"  "}
+            {limit}{" "}
+            <button
+              onClick={() => {
+                setLimit((limit) => {
+                  fetchProducts(`?limit=${limit + 1}`);
+                  return limit === 0 ? 0 : limit + 1;
+                });
+              }}
+            >
+              +
+            </button>
+          </div>
+        </div>
+        <div className="product-container">{products}</div>
+      </div>
     </>
   );
 }

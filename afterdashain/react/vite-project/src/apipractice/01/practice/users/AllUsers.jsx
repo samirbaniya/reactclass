@@ -9,11 +9,14 @@ function AllUsers() {
   const [loading, setLoading] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null); // Store selected user data
 
-  async function fetchProducts() {
+  async function fetchUsers() {
     try {
       setLoading(true);
 
       const data = await fetch(apiUrl + "/users");
+      if (!data.ok) {
+        throw new Error("Error while fetching products");
+      }
       const finaldata = await data.json();
       setData(finaldata);
     } catch (error) {
@@ -22,8 +25,24 @@ function AllUsers() {
       setLoading(false);
     }
   }
+  async function deleteUsers(id) {
+    try {
+      setLoading(true);
+
+      const data = await fetch(apiUrl + "/users/" + id, { method: "DELETE" });
+      if (!data.ok) {
+        throw new Error("Error while deleting");
+      }
+      const finaldata = await data.json();
+      console.log(finaldata);
+    } catch (error) {
+      setError(error);
+    } finally {
+      setLoading(false);
+    }
+  }
   useEffect(() => {
-    fetchProducts();
+    fetchUsers();
   }, []);
 
   const dialogvar = useRef(null);
@@ -55,6 +74,17 @@ function AllUsers() {
           {user.address.geolocation.lat} <br />
           Longitude:
           {user.address.geolocation.long}
+        </td>
+        <td>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              deleteUsers(user.id);
+              console.log(user.id);
+            }}
+          >
+            Delete
+          </button>
         </td>
       </tr>
     </tbody>
@@ -92,6 +122,7 @@ function AllUsers() {
                 <th>Name</th>
                 {/* <th>Phone</th> */}
                 <th>Address</th>
+                <th>Action</th>
               </tr>
             </thead>
             {users}
@@ -143,7 +174,7 @@ function AllUsers() {
           </dialog>
         </div>
       ) : null}
-      {/* <button onClick={fetchProducts}>All Users</button> */}
+      {/* <button onClick={fetchUsers}>All Users</button> */}
     </>
   );
 }

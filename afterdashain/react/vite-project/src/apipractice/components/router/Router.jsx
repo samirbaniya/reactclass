@@ -5,6 +5,7 @@ import Cart from "../../01/practice/carts/Cart";
 import User from "../../01/practice/users/User";
 import SingleProduct from "../../01/practice/products/SingleProduct";
 import FormDemo from "../../02/FormDemo";
+import Login from "../../../Pages/login/Login";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
         element: <FormDemo />,
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ]);
 

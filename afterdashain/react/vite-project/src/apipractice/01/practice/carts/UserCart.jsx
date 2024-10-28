@@ -121,7 +121,15 @@ function UserCart() {
                 </div>
               ))}
             </div>
-            <p className="cart-product-price">
+            <p
+              className="cart-product-price"
+              style={{
+                color: "green",
+                fontWeight: "bold",
+                fontSize: "20px",
+                padding: "10px",
+              }}
+            >
               Grand Total: ${total.toFixed(2)}
             </p>
           </div>

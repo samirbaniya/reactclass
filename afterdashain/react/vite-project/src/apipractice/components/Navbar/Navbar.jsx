@@ -14,6 +14,9 @@ function Navbar() {
         <NavLink to={"/Users"}>
           <li>Users</li>
         </NavLink>
+        <NavLink to={"/login"}>
+          <li>Login</li>
+        </NavLink>
       </ul>
     </div>
   );
