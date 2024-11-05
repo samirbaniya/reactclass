@@ -1,0 +1,11 @@
+.manage-products {
+  background-color: aliceblue;
+  min-height: 100%;
+}
+.product-table,
+.product-table th,
+.product-table td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 20px;
+}

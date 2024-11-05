@@ -6,6 +6,9 @@ import User from "../../01/practice/users/User";
 import SingleProduct from "../../01/practice/products/SingleProduct";
 import FormDemo from "../../02/FormDemo";
 import Login from "../../../Pages/login/Login";
+import Protected from "../Protected";
+import ManageProducts from "../../01/practice/Admin/ManageProducts";
+import EditProduct from "../../01/practice/Admin/EditProduct";
 
 const router = createBrowserRouter([
   {
@@ -27,19 +30,47 @@ const router = createBrowserRouter([
       },
       {
         path: "/Carts",
-        element: <Cart />,
+        element: (
+          <Protected>
+            <Cart />
+          </Protected>
+        ),
       },
       {
         path: "/Users",
-        element: <User />,
+        element: (
+          <Protected>
+            <User />
+          </Protected>
+        ),
       },
       {
         path: "/products/:id",
-        element: <SingleProduct />,
+        element: (
+          <Protected>
+            <SingleProduct />
+          </Protected>
+        ),
+      },
+      {
+        path: "/edit/:id",
+        element: (
+          <Protected>
+            <EditProduct />
+          </Protected>
+        ),
       },
       {
         path: "/form",
         element: <FormDemo />,
+      },
+      {
+        path: "/admin/products",
+        element: (
+          <Protected>
+            <ManageProducts />
+          </Protected>
+        ),
       },
     ],
   },

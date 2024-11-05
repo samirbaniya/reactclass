@@ -246,8 +246,8 @@
 
 /* UserPage */
 .user-table,
-th,
-td {
+.user-table th,
+.user-table td {
   border: 1px solid black;
   border-collapse: collapse;
   padding: 20px;

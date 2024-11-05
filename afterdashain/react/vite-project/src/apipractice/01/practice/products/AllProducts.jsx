@@ -90,6 +90,7 @@ function AllProducts() {
       <div>
         <div className="filters">
           <select
+            style={{ textAlign: "center" }}
             value={category}
             onChange={(e) => {
               if (e.target.value === "") {

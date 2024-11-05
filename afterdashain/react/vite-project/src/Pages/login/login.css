@@ -25,6 +25,11 @@
   color: #333;
   margin-bottom: 30px;
 }
+/* .without-login a {
+  text-decoration: none;
+  color: black;
+  padding-right: 30px;
+} */
 
 /* Style for the input fields */
 .input-field {
