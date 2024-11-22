@@ -2,6 +2,7 @@ import { useRef } from "react";
 // import { useState } from "react";
 import "./Login.css";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useAuthContext } from "../../apipractice/components/Context/useAuthContext";
 
 function Login() {
   const apiUrl = import.meta.env.VITE_BASE_URL;
@@ -10,8 +11,7 @@ function Login() {
   const navigate = useNavigate();
   // const [password, setPassword] = useState("");
   // const [userName, setUserName] = useState("");
-
-  const token = localStorage.getItem("token");
+  const { setIsLoggedIn } = useAuthContext();
   // console.log(token);
   async function onSubmit() {
     const password = passwordRef.current?.value;
@@ -32,7 +32,6 @@ function Login() {
         method: "POST",
         headers: {
           "Content-Type": "application/json", // Added header
-          Authorization: "Bearer " + token,
         },
         body: JSON.stringify(loginJson),
       });
@@ -41,6 +40,7 @@ function Login() {
       }
       const response = await rawData.json();
       localStorage.setItem("token", response.token);
+      setIsLoggedIn(true);
       alert("logged in successfully");
       navigate("/");
     } catch (error) {

@@ -9,16 +9,12 @@ import Login from "../../../Pages/login/Login";
 import Protected from "../Protected";
 import ManageProducts from "../../01/practice/Admin/ManageProducts";
 import EditProduct from "../../01/practice/Admin/EditProduct";
+import Layout from "../Layout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <div style={{ height: "100vh" }}>
-        <Navbar />
-        <Outlet />
-      </div>
-    ),
+    element: <Layout/>,
     children: [
       {
         path: "/",

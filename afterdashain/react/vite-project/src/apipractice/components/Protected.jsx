@@ -1,9 +1,10 @@
 import { Navigate } from "react-router-dom";
+import { useAuthContext } from "./Context/useAuthContext";
 
 /* eslint-disable react/prop-types */
 function Protected({ children }) {
-  const token = localStorage.getItem("token");
-  if (token) {
+  const { isloggedin } = useAuthContext();
+  if (isloggedin) {
     return <>{children}</>;
   } else {
     return <Navigate to="/login" />;
