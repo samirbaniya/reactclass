@@ -1,20 +1,19 @@
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import Navbar from "../Navbar/Navbar";
-import Product from "../../01/practice/products/Product";
-import Cart from "../../01/practice/carts/Cart";
-import User from "../../01/practice/users/User";
-import SingleProduct from "../../01/practice/products/SingleProduct";
-import FormDemo from "../../02/FormDemo";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "../../../Pages/login/Login";
-import Protected from "../Protected";
-import ManageProducts from "../../01/practice/Admin/ManageProducts";
 import EditProduct from "../../01/practice/Admin/EditProduct";
+import ManageProducts from "../../01/practice/Admin/ManageProducts";
+import Cart from "../../01/practice/carts/Cart";
+import Product from "../../01/practice/products/Product";
+import SingleProduct from "../../01/practice/products/SingleProduct";
+import User from "../../01/practice/users/User";
+import FormDemo from "../../02/FormDemo";
 import Layout from "../Layout";
+import Protected from "../Protected";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout/>,
+    element: <Layout />,
     children: [
       {
         path: "/",
