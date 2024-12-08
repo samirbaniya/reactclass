@@ -1,11 +1,12 @@
 import { CiSearch } from "react-icons/ci";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className=" flex p-3 bg-white gap-16">
+    <div className=" flex py-3  bg-white justify-around">
       <img src="/images/flipcartLogo.svg" alt="Logo" />
 
-      <div className="bg-[#f0f5ff] flex px-3 rounded-lg w-1/2">
+      <div className="bg-[#f0f5ff] flex px-3 rounded-lg w-5/12">
         <button>
           <CiSearch />
         </button>
@@ -15,13 +16,15 @@ function Navbar() {
           className="bg-transparent w-full"
         />
       </div>
-      <button className="flex items-center">
-        <img
-          src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/profile-52e0dc.svg"
-          alt="icon"
-        />
-        Login
-      </button>
+      <NavLink to={"/loginForm"}>
+        <button className="flex items-center">
+          <img
+            src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/profile-52e0dc.svg"
+            alt="icon"
+          />
+          Login
+        </button>
+      </NavLink>
       <div className="flex items-center">
         <img
           src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/header_cart-eed150.svg"

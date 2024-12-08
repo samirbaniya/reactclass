@@ -7,3 +7,6 @@ export async function getAllProduct() {
 export async function getSingleProduct(id) {
   return await axios.get(BASE_URL + "products/" + id);
 }
+export async function getAllCategory() {
+  return await axios.get(BASE_URL + "products/categories");
+}
