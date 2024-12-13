@@ -1,12 +1,15 @@
-import axios from "axios";
 import { BASE_URL } from "../constants/EnvConstants";
+import { axiosWithAuth, basicAxios } from "./interceptor";
 
 export async function getAllProduct() {
-  return await axios.get(BASE_URL + "products");
+  return await axiosWithAuth.get(BASE_URL + "products");
 }
 export async function getSingleProduct(id) {
-  return await axios.get(BASE_URL + "products/" + id);
+  return await basicAxios.get(BASE_URL + "products/" + id);
 }
 export async function getAllCategory() {
-  return await axios.get(BASE_URL + "products/categories");
+  return await basicAxios.get(BASE_URL + "products/categories");
+}
+export async function getSingleCategory(category) {
+  return await basicAxios.get(BASE_URL + "products/category/" + category);
 }
