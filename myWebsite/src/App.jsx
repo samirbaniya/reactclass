@@ -1,10 +1,9 @@
-import React from "react";
-import { Button } from "./components/ui/button";
+import Router from "./mycomponents/Router";
 
 function App() {
   return (
     <div>
-      <Button variant="link">Click</Button>
+      <Router />
     </div>
   );
 }
