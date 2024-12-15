@@ -13,3 +13,6 @@ export async function getAllCategory() {
 export async function getSingleCategory(category) {
   return await basicAxios.get(BASE_URL + "products/category/" + category);
 }
+export async function addProduct(productData) {
+  return await axiosWithAuth.post(BASE_URL + "products", productData);
+}

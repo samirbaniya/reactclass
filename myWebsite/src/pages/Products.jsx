@@ -71,7 +71,7 @@ function Products() {
 
   return (
     <div className="pb-10 px-2">
-      <div className="dark:bg-gray-900 bg-white h-fit p-5 m-2 flex gap-6 justify-center ">
+      <div className="dark:bg-gray-900 bg-white h-fit p-5 mx-2 my-3 flex gap-6 justify-center ">
         <div onClick={() => handleCategory("all")} className="cursor-pointer">
           All
         </div>
@@ -85,7 +85,7 @@ function Products() {
           </div>
         ))}
       </div>
-      <div className="dark:bg-gray-900 bg-white h-fit pb-5 m-2">
+      <div className="dark:bg-gray-900 bg-white h-fit pb-5 mx-2 my-3">
         <div>
           <Carousel1
             slides={slides}
@@ -94,17 +94,17 @@ function Products() {
           />
         </div>
       </div>
-      <div className=" m-2 flex">
+      <div className=" mx-2 my-3 flex">
         <div className="dark:bg-gray-900 bg-white flex flex-col mr-3 scrollbar-width">
           <h1 className="p-3 font-bold text-lg">
             {selectedCategory.toUpperCase()} PRODUCTS
           </h1>
           <div className="flex overflow-x-auto w-[80vw]">{products}</div>
         </div>
-        <div className="border border-black h-80">
+        <div className="h-80">
           <img
             className="w-full h-full object-contain"
-            src="https://picsum.photos/200/300"
+            src="https://rukminim2.flixcart.com/fk-p-flap/530/810/image/ec9bba198c534edb.jpg?q=20"
             alt=""
           />
         </div>

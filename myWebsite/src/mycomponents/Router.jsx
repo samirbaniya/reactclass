@@ -1,23 +1,34 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "../pages/Login";
-import Products from "../pages/Products";
+// import Products from "../pages/Products";
 import Layout from "./Layout";
 import Cart from "../pages/Cart";
 import User from "../pages/User";
 import LoginForm from "../pages/LoginForm";
+import Home from "@/pages/Home";
+import ProductDescription from "@/pages/ProductDescription";
+import AddProducts from "@/pages/adminpages/AddProducts";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
     children: [
+      // {
+      //   path: "/",
+      //   element: <Products />,
+      // },
+      // {
+      //   path: "/products",
+      //   element: <Products />,
+      // },
       {
         path: "/",
-        element: <Products />,
+        element: <Home />,
       },
       {
         path: "/products",
-        element: <Products />,
+        element: <Home />,
       },
       {
         path: "/cart",
@@ -26,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/user",
         element: <User />,
+      },
+      {
+        path: "/products/:id",
+        element: <ProductDescription />,
       },
     ],
   },
@@ -36,6 +51,10 @@ const router = createBrowserRouter([
   {
     path: "/loginForm",
     element: <LoginForm />,
+  },
+  {
+    path: "/addProducts",
+    element: <AddProducts />,
   },
 ]);
 
