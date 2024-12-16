@@ -1,8 +1,11 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { login } from "../api/auth";
+import { useNavigate } from "react-router-dom";
 
 function LoginForm() {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -14,10 +17,13 @@ function LoginForm() {
     mutationFn: login,
     onError: (err) => {
       console.log(err);
+      alert("Failed to login!!!");
     },
     onSuccess: (data) => {
       console.log(data);
       localStorage.setItem("token", data.token);
+      alert("logged in successfully");
+      navigate("/");
       queryClient.invalidateQueries({ queryKey: ["products"] });
     },
   });
@@ -31,7 +37,7 @@ function LoginForm() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-slate-100">
+    <div className="flex justify-center items-center h-screen w-screen bg-slate-100">
       <form
         className=" w-80 p-8 rounded-3xl bg-white shadow-2xl"
         onSubmit={handleSubmit(onSubmit)}
@@ -41,6 +47,7 @@ function LoginForm() {
         </h1>
         <input
           placeholder="username"
+          type="text"
           className="placeholder-gray-700 min-w-60 bg-gray-50 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 m-3"
           {...register("username", {
             required: { message: "Username is required", value: true },
@@ -52,6 +59,7 @@ function LoginForm() {
         {/* include validation with required or other standard HTML validation rules */}
         <input
           placeholder="password"
+          type="password"
           className="placeholder-gray-700 min-w-60 bg-gray-50 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 m-3"
           {...register("password", {
             required: { message: "Password is required", value: true },

@@ -66,14 +66,14 @@ function Home() {
   )?.map((product) => (
     <div
       onClick={() => navigate("/products/" + product.id)}
-      className="flex flex-col items-center border border-slate-200 rounded-sm p-2 m-3 h-fit w-48"
+      className="flex flex-col items-center border border-slate-200 rounded-sm p-2 m-3 h-fit w-48 cursor-pointer "
       key={product.id}
     >
       {product.id && (
         <>
           <div className="">
             <img
-              className="w-30 h-40"
+              className="w-30 h-40 transform transition-transform duration-200 hover:scale-105"
               src={product.image}
               alt={product.title}
             />
@@ -168,14 +168,14 @@ function Home() {
                   .map((product) => (
                     <div
                       onClick={() => navigate("/products/" + product.id)}
-                      className="flex flex-col items-center border border-slate-200 rounded-sm p-2 m-3 h-fit w-44"
+                      className="flex flex-col items-center border border-slate-200 rounded-sm p-2 m-3 h-fit w-44 cursor-pointer"
                       key={product.id}
                     >
                       {product.id && (
                         <>
                           <div className="">
                             <img
-                              className="w-30 h-40"
+                              className="w-30 h-40  transform transition-transform duration-100 hover:scale-105"
                               src={product.image}
                               alt={product.title}
                             />

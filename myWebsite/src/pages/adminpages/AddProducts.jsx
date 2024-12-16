@@ -1,164 +1,172 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useMutation, useQuery } from "@tanstack/react-query";
-import { addProduct, getAllCategory } from "@/api/product";
+import { addProduct } from "@/api/product";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useForm } from "react-hook-form";
 
 function AddProducts() {
-
-  const navigate = useNavigate();
-  
-  // State for product form
-  const [title, setTitle] = useState("");
-  const [price, setPrice] = useState("");
-  const [image, setImage] = useState("");
-  const [description, setDescription] = useState("");
-  const [category, setCategory] = useState("");
-
-  // React Query for fetching categories
   const {
-    data: categoryList,
-    error: categoryError,
-    isLoading: categoryLoading,
-  } = useQuery(["categories"], getAllCategory);
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  // React Query for adding product
-  const { mutate: createProduct, isLoading: isCreatingProduct } = useMutation(
-    addProduct,
-    {
-      onSuccess: () => {
-        alert("Product added successfully");
-        navigate("/products"); // Redirect to products list or dashboard
-      },
-      onError: () => {
-        alert("Failed to add product");
-      },
-    }
-  );
+  const queryClient = useQueryClient();
 
-  const onSubmit = (e) => {
-    e.preventDefault();
+  const { mutate: addProductsMutate, isPending } = useMutation({
+    mutationFn: addProduct,
+    onError: (err) => {
+      console.log(err);
+      alert("Failed to add products!!!");
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["products"] });
+    },
+  });
 
-    const productData = {
-      title,
-      price,
-      image,
-      description,
-      category,
+  const onSubmit = (data) => {
+    const ProductsData = {
+      title: data.title,
+      price: data.price,
+      image: data.image,
+      description: data.description,
+      category: data.category,
     };
-
-    createProduct(productData); // Call mutation to add the product
+    addProductsMutate(ProductsData);
   };
 
-  if (categoryLoading) return <div>Loading categories...</div>;
-  if (categoryError) return <div>Error fetching categories</div>;
-
   return (
-    <div className="flex justify-center mt-12">
+    <div className="flex justify-center items-center w-screen min-h-screen py-10 bg-gradient-to-br dark:from-slate-800 from-blue-50 to-blue-200">
       <form
-        onSubmit={onSubmit}
-        className="bg-gray-100 p-8 rounded-lg shadow-lg w-full max-w-md"
+        className="w-full max-w-2xl mr-56 p-8 rounded-3xl dark:bg-slate-600 bg-white shadow-lg border border-gray-200"
+        onSubmit={handleSubmit(onSubmit)}
       >
-        <h2 className="text-2xl font-semibold mb-6 text-center">
-          Add New Product
-        </h2>
+        <h1 className="text-3xl font-semibold text-center dark:text-white text-blue-700 mb-6">
+          Add Product
+        </h1>
 
-        <div className="mb-4">
+        {/* Title */}
+        <div className="flex items-center gap-2 mb-5">
           <label
             htmlFor="title"
-            className="block text-sm font-medium text-gray-700"
+            className="text-lg font-medium text-gray-700 dark:text-white w-40"
           >
-            Title
+            Title:
           </label>
           <input
             id="title"
-            type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
+            className="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-3"
+            {...register("title", {
+              required: { message: "Title is required", value: true },
+            })}
           />
+          {errors.title && (
+            <span className="text-sm text-red-600 block">
+              {errors.title.message}
+            </span>
+          )}
         </div>
 
-        <div className="mb-4">
+        {/* Price */}
+        <div className="flex items-center gap-2 mb-5">
           <label
             htmlFor="price"
-            className="block text-sm font-medium text-gray-700"
+            className="text-lg font-medium text-gray-700 dark:text-white w-40"
           >
-            Price
+            Price:
           </label>
           <input
             id="price"
             type="number"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
+            step="0.01"
+            className="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-3"
+            {...register("price", {
+              required: { message: "Price is required", value: true },
+              min: {
+                value: 0,
+                message: "Price must be greater than or equal to 0",
+              },
+              max: { value: 9999.99, message: "Price must not exceed 9999.99" },
+            })}
           />
+          {errors.price && (
+            <span className="text-sm text-red-600 block">
+              {errors.price.message}
+            </span>
+          )}
         </div>
 
-        <div className="mb-4">
+        {/* Image URL */}
+        <div className="flex items-center gap-2 mb-5">
           <label
             htmlFor="image"
-            className="block text-sm font-medium text-gray-700"
+            className="text-lg font-medium text-gray-700 dark:text-white w-40"
           >
-            Image URL
+            Image:
           </label>
           <input
             id="image"
-            type="text"
-            value={image}
-            onChange={(e) => setImage(e.target.value)}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
+            className="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-3"
+            {...register("image", {
+              required: { message: "Image URL is required", value: true },
+            })}
           />
+          {errors.image && (
+            <span className="text-sm text-red-600 block">
+              {errors.image.message}
+            </span>
+          )}
         </div>
 
-        <div className="mb-4">
-          <label
-            htmlFor="category"
-            className="block text-sm font-medium text-gray-700"
-          >
-            Category
-          </label>
-          <select
-            id="category"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
-          >
-            <option value="">Select Category</option>
-            {categoryList?.map((cat, index) => (
-              <option key={index} value={cat}>
-                {cat.toUpperCase()}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="mb-4">
+        {/* Description */}
+        <div className="flex items-center gap-2 mb-5">
           <label
             htmlFor="description"
-            className="block text-sm font-medium text-gray-700"
+            className="text-lg font-medium text-gray-700 dark:text-white w-40"
           >
-            Description
+            Description:
           </label>
           <textarea
             id="description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-3"
             rows="4"
-            required
-          ></textarea>
+            {...register("description", {
+              required: { message: "Description is required", value: true },
+            })}
+          />
+          {errors.description && (
+            <span className="text-sm text-red-600 block">
+              {errors.description.message}
+            </span>
+          )}
+        </div>
+
+        {/* Category */}
+        <div className="flex items-center gap-2 mb-5">
+          <label
+            htmlFor="category"
+            className="text-lg font-medium text-gray-700 dark:text-white w-40"
+          >
+            Category:
+          </label>
+          <input
+            id="category"
+            className="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-3"
+            {...register("category", {
+              required: { message: "Category is required", value: true },
+            })}
+          />
+          {errors.category && (
+            <span className="text-sm text-red-600 block">
+              {errors.category.message}
+            </span>
+          )}
         </div>
 
         <button
           type="submit"
-          disabled={isCreatingProduct}
-          className="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          disabled={isPending}
+          className="w-full py-3 text-white dark:bg-gray-800 dark:hover:bg-gray-900 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium text-lg shadow-md transition duration-300 disabled:bg-blue-300"
         >
-          {isCreatingProduct ? "Adding..." : "Add Product"}
+          {isPending ? "Submitting..." : "Add Product"}
         </button>
       </form>
     </div>

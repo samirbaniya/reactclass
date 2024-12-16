@@ -1,9 +1,8 @@
-import React from "react";
 
 function Footer() {
   return (
     <div>
-      <footer className="bg-[#212121] text-gray-300 py-10">
+      <footer className="bg-[#212121] text-gray-300 py-10 w-screen">
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-5 gap-6">
           {/* About Section */}
           <div>
