@@ -10,6 +10,7 @@ import AddProducts from "@/pages/adminpages/AddProducts";
 import AdminLayout from "./AdminLayout";
 import EditProduct from "@/pages/adminpages/EditProduct";
 import AdminDashBoard from "@/pages/adminpages/AdminDashBoard";
+import SearchResult from "@/pages/SearchResult";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/products/:id",
         element: <ProductDescription />,
+      },
+      {
+        path: "/searchresult/:search",
+        element: <SearchResult />,
       },
     ],
   },

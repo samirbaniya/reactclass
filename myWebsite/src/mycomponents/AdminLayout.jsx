@@ -4,9 +4,9 @@ import { SidebarTrigger } from "@/components/ui/sidebar";
 
 function AdminLayout() {
   return (
-    <div className="flex">
+    <div className="flex w-screen">
       <AppSidebar />
-      <div>
+      <div className="w-full">
         <SidebarTrigger />
         <Outlet />
       </div>

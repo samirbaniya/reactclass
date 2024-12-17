@@ -34,9 +34,9 @@ function AddProducts() {
   };
 
   return (
-    <div className="flex justify-center items-center w-screen min-h-screen py-10 bg-gradient-to-br dark:from-slate-800 from-blue-50 to-blue-200">
+    <div className="flex justify-center items-center w-full min-h-screen py-10 bg-gradient-to-br dark:from-slate-800 from-blue-50 to-blue-200">
       <form
-        className="w-full max-w-2xl mr-56 p-8 rounded-3xl dark:bg-slate-600 bg-white shadow-lg border border-gray-200"
+        className="w-full max-w-2xl p-8 rounded-3xl dark:bg-slate-600 bg-white shadow-lg border border-gray-200"
         onSubmit={handleSubmit(onSubmit)}
       >
         <h1 className="text-3xl font-semibold text-center dark:text-white text-blue-700 mb-6">
