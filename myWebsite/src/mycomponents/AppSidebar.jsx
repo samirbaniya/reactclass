@@ -1,6 +1,7 @@
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
@@ -8,37 +9,50 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { Home, Pencil, Plus, Search, Settings, User } from "lucide-react";
+import {
+  Book,
+  ChevronUp,
+  Home,
+  Megaphone,
+  Settings,
+  ShoppingBasket,
+  SquareUser,
+  User,
+  User2,
+} from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 // Menu items.
-const items = [
+const applicationItems = [
   {
     title: "Dashboard",
     url: "/admin/dashboard",
     icon: Home,
   },
   {
-    title: "Add Products",
-    url: "/admin/addproducts",
-    icon: Plus,
+    title: "Products",
+    url: "/admin/products",
+    icon: ShoppingBasket,
   },
   {
-    title: "Edit Product",
-    url: "/admin/editproduct",
-    icon: Pencil,
+    title: "Users List",
+    url: "/",
+    icon: SquareUser,
   },
+];
+const websiteItems = [
   {
-    title: "Search",
+    title: "Banner",
     url: "#",
-    icon: Search,
+    icon: Book,
   },
   {
-    title: "Settings",
+    title: "Advertisement",
     url: "#",
-    icon: Settings,
+    icon: Megaphone,
   },
   {
-    title: "User Page",
+    title: "User HomePage",
     url: "/",
     icon: User,
   },
@@ -52,13 +66,29 @@ export function AppSidebar() {
           <SidebarGroupLabel>Application</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {items.map((item) => (
+              {applicationItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url}>
+                    <NavLink to={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
-                    </a>
+                    </NavLink>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+          <hr />
+          <SidebarGroupLabel>Website</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {websiteItems.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton asChild>
+                    <NavLink to={item.url}>
+                      <item.icon />
+                      <span>{item.title}</span>
+                    </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
@@ -66,6 +96,15 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+      <SidebarFooter>
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton className="ml-3">
+              © QuickStoreNep
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarFooter>
     </Sidebar>
   );
 }

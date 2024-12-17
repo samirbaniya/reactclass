@@ -1,4 +1,3 @@
-
 function Footer() {
   return (
     <div>
@@ -145,7 +144,7 @@ function Footer() {
         </div>
 
         <div className="mt-8 border-t border-gray-700 pt-4 text-center">
-          <p className="text-sm text-gray-400">© QuickStoreNep.com</p>
+          <p className="text-sm text-gray-400">© QuickStoreNep</p>
         </div>
       </footer>
     </div>
