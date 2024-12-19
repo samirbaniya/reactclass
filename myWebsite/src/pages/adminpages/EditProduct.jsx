@@ -1,4 +1,5 @@
 import { getSingleProduct, updateProduct } from "@/api/product";
+import Loading from "@/mycomponents/Loading";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
@@ -27,7 +28,7 @@ function EditProduct() {
   });
 
   const { mutate: updateProductMutate, isPending } = useMutation({
-    mutationFn: updateProduct,
+    mutationFn: ({ id, ProductData }) => updateProduct(id, ProductData),
     onError: (err) => {
       console.log(err);
       alert("Failed to update product!!!");
@@ -47,7 +48,8 @@ function EditProduct() {
       description: data.description,
       category: data.category,
     };
-    updateProductMutate(id, ProductData);
+    // console.log(ProductData);
+    updateProductMutate({ id, ProductData });
   };
 
   useEffect(() => {
@@ -61,7 +63,11 @@ function EditProduct() {
   }, [product, setValue]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
   }
 
   if (isError) {

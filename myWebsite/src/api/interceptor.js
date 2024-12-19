@@ -20,6 +20,9 @@ function axiosRejected(e) {
     if (e.response.status === 500) {
       return Promise.reject(e.response.data);
     }
+    if (e.response.status === 400) {
+      return Promise.reject(e.response.data);
+    }
     if (e.response.status === 401 || e.response.status === 403) {
       localStorage.removeItem("token");
       location.reload();

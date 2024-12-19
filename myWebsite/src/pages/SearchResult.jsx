@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import { getAllProduct } from "@/api/product";
+import Loading from "@/mycomponents/Loading";
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -18,7 +19,7 @@ function SearchResult() {
   });
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div><Loading /></div>;
   }
 
   if (isError) {

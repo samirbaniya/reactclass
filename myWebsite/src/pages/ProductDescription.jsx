@@ -1,5 +1,6 @@
 import { getSingleProduct } from "@/api/product";
 import { Button } from "@/components/ui/button";
+import Loading from "@/mycomponents/Loading";
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -21,7 +22,7 @@ function ProductDescription() {
 
   // Loading state
   if (isLoading) {
-    return <div className="text-center text-lg">Loading...</div>;
+    return <div className="text-center text-lg"><Loading /></div>;
   }
 
   // Error state

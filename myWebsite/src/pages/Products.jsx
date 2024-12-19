@@ -8,6 +8,7 @@ import {
 import { Navigate } from "react-router-dom";
 import { useState } from "react";
 import slides from "@/assets/Slides";
+import Loading from "@/mycomponents/Loading";
 
 function Products() {
   const [selectedCategory, setselectedCategory] = useState("all");
@@ -37,7 +38,7 @@ function Products() {
   };
 
   if (isLoading || isPending || allCategoryLoading) {
-    return <div>Loading...</div>;
+    return <div><Loading /></div>;
   }
   if (isError) {
     return <div>Error...</div>;

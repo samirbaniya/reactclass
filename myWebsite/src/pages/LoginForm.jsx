@@ -2,9 +2,13 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { login } from "../api/auth";
 import { useNavigate } from "react-router-dom";
+import useAuthStore from "@/store/useAuthStore";
+import Loading from "@/mycomponents/Loading";
 
 function LoginForm() {
   const navigate = useNavigate();
+
+  const { loginStore } = useAuthStore();
 
   const {
     register,
@@ -21,7 +25,7 @@ function LoginForm() {
     },
     onSuccess: (data) => {
       // console.log(data.token);
-      localStorage.setItem("token", data.token);
+      loginStore(data.token);
       alert("logged in successfully");
       navigate("/");
       queryClient.invalidateQueries({ queryKey: ["products"] });
@@ -36,10 +40,18 @@ function LoginForm() {
     loginMutate(userData);
   };
 
+  if (isPending) {
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
+  }
+
   return (
-    <div className="flex justify-center items-center h-screen w-screen bg-slate-100">
+    <div className="flex justify-center items-center h-screen w-screen dark:bg-slate-500 bg-slate-100">
       <form
-        className=" w-80 p-8 rounded-3xl bg-white shadow-2xl"
+        className=" w-80 p-8 rounded-3xl dark:bg-slate-700 bg-white shadow-2xl"
         onSubmit={handleSubmit(onSubmit)}
       >
         <h1 className="flex justify-center text-2xl mb-10 font-medium">

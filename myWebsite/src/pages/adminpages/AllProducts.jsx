@@ -2,6 +2,7 @@ import { getAllProduct } from "@/api/product";
 import { useQuery } from "@tanstack/react-query";
 import { NavLink, useNavigate } from "react-router-dom";
 import DeleteProduct from "./DeleteProduct";
+import Loading from "@/mycomponents/Loading";
 
 function AllProducts() {
   const navigate = useNavigate();
@@ -48,7 +49,7 @@ function AllProducts() {
     );
   }
   if (isLoading) {
-    return <div className="text-gray-500 text-center">Loading...</div>;
+    return <div className="text-gray-500 text-center"><Loading /></div>;
   }
 
   return (

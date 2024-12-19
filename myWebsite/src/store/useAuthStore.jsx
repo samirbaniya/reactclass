@@ -6,7 +6,12 @@ const tokenInit = localStorage.getItem("token");
 const useAuthStore = create((set) => ({
   token: tokenInit,
   isLoggedIn: isLoggedInInit,
-
+  loginStore: (value) => {
+    if (value) {
+      localStorage.setItem("token", value);
+      set({ isLoggedIn: true,token: value });
+    }
+  },
   logout: () => {
     const confirmLogout = window.confirm("Are you sure you want to log out?");
 

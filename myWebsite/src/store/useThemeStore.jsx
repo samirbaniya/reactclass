@@ -5,7 +5,7 @@ const useThemeStore = create((set) => ({
   isDark: JSON.parse(localStorage.getItem(DARK_MODE)) || false,
   setIsDark: (value) => {
     const element = document.body;
-    set((state) => {
+    set(() => {
       const newDarkMode = value;
       localStorage.setItem(DARK_MODE, JSON.stringify(newDarkMode));
       if (newDarkMode) {

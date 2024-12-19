@@ -8,6 +8,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import slides from "@/assets/Slides";
+import Loading from "@/mycomponents/Loading";
 
 function Home() {
   const navigate = useNavigate();
@@ -50,7 +51,11 @@ function Home() {
     singleCategoryisLoading ||
     singleCategoryisPending
   ) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
   }
   if (isError || singleCategoryisError) {
     return <div>Error...</div>;

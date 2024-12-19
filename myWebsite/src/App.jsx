@@ -1,6 +1,17 @@
+import { useEffect } from "react";
 import Router from "./mycomponents/Router";
+import { DARK_MODE } from "./constants/appConstants";
 
 function App() {
+  useEffect(() => {
+    const isDark = JSON.parse(localStorage.getItem(DARK_MODE)) || false;
+    const element = document.body;
+    if (isDark) {
+      element.classList.add("dark");
+    } else {
+      element.classList.remove("dark");
+    }
+  });
   return (
     <div>
       <Router />
