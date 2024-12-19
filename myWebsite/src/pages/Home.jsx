@@ -109,39 +109,38 @@ function Home() {
           />
         </div>
       </div>
-      {products && (
-        <div className=" mx-2 my-3 flex">
+
+      <div className=" mx-2 my-3 flex">
+        <div
+          className={`dark:bg-gray-900 bg-white flex flex-col mr-3 ${
+            products?.length < 5 ? "items-center" : ""
+          }`}
+        >
+          <h1 className="p-3 font-bold text-lg">
+            {selectedCategory.toUpperCase()} PRODUCTS
+          </h1>
           <div
-            className={`dark:bg-gray-900 bg-white flex flex-col mr-3 ${
-              products?.length < 5 ? "items-center" : ""
+            className={`flex overflow-x-auto w-[80vw] scrollbarWidth-auto ${
+              products?.length < 5 ? "justify-center" : ""
             }`}
           >
-            <h1 className="p-3 font-bold text-lg">
-              {selectedCategory.toUpperCase()} PRODUCTS
-            </h1>
-            <div
-              className={`flex overflow-x-auto w-[80vw] scrollbarWidth-auto ${
-                products?.length < 5 ? "justify-center" : ""
-              }`}
-            >
-              {products?.length > 0 ? (
-                products
-              ) : (
-                <div className="w-full flex justify-center">
-                  {selectedCategory} products loading...
-                </div>
-              )}
-            </div>
-          </div>
-          <div className="h-80">
-            <img
-              className="w-full h-full object-contain"
-              src="https://rukminim2.flixcart.com/fk-p-flap/530/810/image/ec9bba198c534edb.jpg?q=20"
-              alt=""
-            />
+            {products?.length > 0 ? (
+              products
+            ) : (
+              <div className="w-full flex justify-center">
+                {selectedCategory} products loading...
+              </div>
+            )}
           </div>
         </div>
-      )}
+        <div className="h-80">
+          <img
+            className="w-full h-full object-contain"
+            src="https://rukminim2.flixcart.com/fk-p-flap/530/810/image/ec9bba198c534edb.jpg?q=20"
+            alt=""
+          />
+        </div>
+      </div>
 
       <div className=" mx-2 my-3 flex flex-row flex-wrap">
         {allCategoryData
