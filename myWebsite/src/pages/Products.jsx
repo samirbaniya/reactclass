@@ -95,7 +95,7 @@ function Products() {
         </div>
       </div>
       <div className=" mx-2 my-3 flex">
-        <div className="dark:bg-gray-900 bg-white flex flex-col mr-3 scrollbar-width">
+        <div className="dark:bg-gray-900 bg-white flex flex-col mr-3 scrollbarWidth-auto">
           <h1 className="p-3 font-bold text-lg">
             {selectedCategory.toUpperCase()} PRODUCTS
           </h1>

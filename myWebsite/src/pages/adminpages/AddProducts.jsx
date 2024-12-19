@@ -1,8 +1,10 @@
 import { addProduct } from "@/api/product";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 function AddProducts() {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -19,6 +21,8 @@ function AddProducts() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["products"] });
+      navigate("/admin/products");
+      alert("Product added successfully");
     },
   });
 

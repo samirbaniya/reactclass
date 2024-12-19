@@ -12,6 +12,8 @@ import EditProduct from "@/pages/adminpages/EditProduct";
 import AdminDashBoard from "@/pages/adminpages/AdminDashBoard";
 import SearchResult from "@/pages/SearchResult";
 import AllProducts from "@/pages/adminpages/AllProducts";
+import Protected from "./Protected";
+import Checkout from "@/pages/Checkout";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +41,14 @@ const router = createBrowserRouter([
         element: <ProductDescription />,
       },
       {
+        path: "/checkout",
+        element: (
+          <Protected>
+            <Checkout />
+          </Protected>
+        ),
+      },
+      {
         path: "/searchresult/:search",
         element: <SearchResult />,
       },
@@ -58,7 +68,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin",
-    element: <AdminLayout />,
+    element: (
+      <Protected>
+        <AdminLayout />
+      </Protected>
+    ),
     children: [
       {
         path: "/admin",
@@ -73,7 +87,7 @@ const router = createBrowserRouter([
         element: <AddProducts />,
       },
       {
-        path: "/admin/editproduct",
+        path: "/admin/editproduct/:id",
         element: <EditProduct />,
       },
       {

@@ -11,14 +11,11 @@ import {
 } from "@/components/ui/sidebar";
 import {
   Book,
-  ChevronUp,
   Home,
   Megaphone,
-  Settings,
   ShoppingBasket,
   SquareUser,
   User,
-  User2,
 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
@@ -36,7 +33,7 @@ const applicationItems = [
   },
   {
     title: "Users List",
-    url: "/",
+    url: "#",
     icon: SquareUser,
   },
 ];

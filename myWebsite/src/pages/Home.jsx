@@ -5,7 +5,7 @@ import {
   getAllProduct,
   getSingleCategory,
 } from "../api/product";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import slides from "@/assets/Slides";
 
@@ -14,7 +14,6 @@ function Home() {
   const [selectedCategory, setselectedCategory] = useState("all");
   const {
     data: productData,
-    error,
     isLoading,
     isError,
     isPending,
@@ -121,7 +120,7 @@ function Home() {
               {selectedCategory.toUpperCase()} PRODUCTS
             </h1>
             <div
-              className={`flex overflow-x-auto w-[80vw] ${
+              className={`flex overflow-x-auto w-[80vw] scrollbarWidth-auto ${
                 products?.length < 5 ? "justify-center" : ""
               }`}
             >

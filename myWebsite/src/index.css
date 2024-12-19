@@ -71,3 +71,6 @@
 * {
   scrollbar-width: none;
 }
+.scrollbarWidth-auto {
+  scrollbar-width: auto;
+}

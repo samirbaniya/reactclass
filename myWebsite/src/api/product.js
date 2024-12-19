@@ -16,3 +16,9 @@ export async function getSingleCategory(category) {
 export async function addProduct(productData) {
   return await axiosWithAuth.post(BASE_URL + "products", productData);
 }
+export async function deleteProduct(id) {
+  return await axiosWithAuth.delete(`${BASE_URL}products/${id}`);
+}
+export async function updateProduct(id, productData) {
+  return await axiosWithAuth.put(`${BASE_URL}products/${id}`, productData);
+}

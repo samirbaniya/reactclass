@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
 import Search from "./Search";
+import useAuthStore from "@/store/useAuthStore";
 
 function Navbar() {
+  const { logout, isLoggedIn } = useAuthStore();
+
   return (
     <div>
       <nav className="bg-white dark:bg-gray-900 w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
@@ -19,9 +22,15 @@ function Navbar() {
 
           <div className="flex md:order-3 space-x-3 md:space-x-0 rtl:space-x-reverse">
             <Search />
-            <NavLink to={"/loginform"}>
-              <Button>Login</Button>
-            </NavLink>
+
+            {!isLoggedIn ? (
+              <NavLink to={"/loginform"}>
+                <Button>Login</Button>
+              </NavLink>
+            ) : (
+              <Button onClick={logout}>Logout</Button>
+            )}
+
             <button
               data-collapse-toggle="navbar-sticky"
               type="button"

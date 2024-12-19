@@ -20,7 +20,7 @@ function LoginForm() {
       alert("Failed to login!!!");
     },
     onSuccess: (data) => {
-      console.log(data);
+      // console.log(data.token);
       localStorage.setItem("token", data.token);
       alert("logged in successfully");
       navigate("/");

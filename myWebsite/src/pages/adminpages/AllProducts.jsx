@@ -1,6 +1,7 @@
 import { getAllProduct } from "@/api/product";
 import { useQuery } from "@tanstack/react-query";
 import { NavLink, useNavigate } from "react-router-dom";
+import DeleteProduct from "./DeleteProduct";
 
 function AllProducts() {
   const navigate = useNavigate();
@@ -30,15 +31,12 @@ function AllProducts() {
       </td>
       <td className="p-3 text-center">
         <div className="flex justify-center gap-2">
-          <NavLink to={`/edit/${product.id}`}>
+          <NavLink to={`/admin/editproduct/${product.id}`}>
             <button className="px-2 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">
               Edit
             </button>
           </NavLink>
-          {/* <DeleteProduct id={product.id} /> */}
-          <button className="px-2 py-1 bg-red-500 text-white rounded hover:bg-red-600">
-            Delete
-          </button>
+          <DeleteProduct id={product.id} />
         </div>
       </td>
     </tr>

@@ -1,9 +1,11 @@
 import { getSingleProduct } from "@/api/product";
+import { Button } from "@/components/ui/button";
 import { useQuery } from "@tanstack/react-query";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function ProductDescription() {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   // Fetching product data
   const {
@@ -59,6 +61,7 @@ function ProductDescription() {
               </h3>
               <hr className="border-gray-300" />
               <p className="text-gray-700">{SingleProduct.description}</p>
+              <Button onClick={() => navigate("/checkout")}>Buy</Button>
             </div>
           </div>
         </div>
