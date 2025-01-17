@@ -1,9 +1,13 @@
 import { addProduct } from "@/api/product";
+import { useToast } from "@/hooks/use-toast";
+import { cn } from "@/lib/utils";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 function AddProducts() {
+  const { toast } = useToast();
+
   const navigate = useNavigate();
   const {
     register,
@@ -17,12 +21,25 @@ function AddProducts() {
     mutationFn: addProduct,
     onError: (err) => {
       console.log(err);
-      alert("Failed to add products!!!");
+      toast({
+        className: cn(
+          "top-0 right-0 flex fixed md:max-w-[420px] md:top-4 md:right-4"
+        ),
+        title: "Failed to add product",
+        description: "Please try again.",
+        variant: "destructive",
+      });
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["products"] });
       navigate("/admin/products");
-      alert("Product added successfully");
+      toast({
+        className: cn(
+          "top-0 right-0 flex fixed md:max-w-[420px] md:top-4 md:right-4"
+        ),
+        title: "Product added",
+        description: "Product added successfully.",
+      });
     },
   });
 

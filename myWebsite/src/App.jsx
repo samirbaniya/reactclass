@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import Router from "./mycomponents/Router";
 import { DARK_MODE } from "./constants/appConstants";
+import { Toaster } from "@/components/ui/toaster";
 
+import "./App.css";
 function App() {
   useEffect(() => {
     const isDark = JSON.parse(localStorage.getItem(DARK_MODE)) || false;
@@ -14,6 +16,7 @@ function App() {
   });
   return (
     <div>
+      <Toaster />
       <Router />
     </div>
   );

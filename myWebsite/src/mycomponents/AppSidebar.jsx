@@ -33,7 +33,7 @@ const applicationItems = [
   },
   {
     title: "Users List",
-    url: "#",
+    url: "/admin/allusers",
     icon: SquareUser,
   },
 ];

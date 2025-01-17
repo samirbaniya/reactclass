@@ -18,7 +18,10 @@ function AllProducts() {
   });
 
   const products = productData?.map((product) => (
-    <tr key={product.id} className="border-b hover:bg-gray-100">
+    <tr
+      key={product.id}
+      className="border-b hover:bg-gray-100 dark:hover:bg-gray-800"
+    >
       <td className="p-3 text-center">{product.id}</td>
       <td className="p-3 text-center">{product.title}</td>
       <td className="p-3 text-center">{product.category}</td>
@@ -49,7 +52,11 @@ function AllProducts() {
     );
   }
   if (isLoading) {
-    return <div className="text-gray-500 text-center"><Loading /></div>;
+    return (
+      <div className="text-gray-500 text-center">
+        <Loading />
+      </div>
+    );
   }
 
   return (
@@ -65,7 +72,7 @@ function AllProducts() {
       <div className="overflow-x-auto">
         <table className="w-full table-auto border-collapse border">
           <thead>
-            <tr className="bg-gray-200">
+            <tr className="bg-gray-200 dark:bg-gray-700">
               <th className="p-3 border">Id</th>
               <th className="p-3 border">Name</th>
               <th className="p-3 border">Category</th>

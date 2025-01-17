@@ -2,9 +2,13 @@ import { Button } from "@/components/ui/button";
 import useAuthStore from "@/store/useAuthStore";
 import { NavLink } from "react-router-dom";
 import Search from "./Search";
+import { useToast } from "@/hooks/use-toast";
+import { ToastAction } from "@/components/ui/toast";
+import { cn } from "@/lib/utils";
 
 function Navbar() {
   const { logout, isLoggedIn } = useAuthStore();
+  const { toast } = useToast();
 
   return (
     <div>
@@ -28,7 +32,56 @@ function Navbar() {
                 <Button>Login</Button>
               </NavLink>
             ) : (
-              <Button onClick={logout}>Logout</Button>
+              <Button
+                onClick={() => {
+                  toast({
+                    className: cn(
+                      "top-0 right-0 flex fixed md:max-w-[420px] md:top-4 md:right-4"
+                    ),
+                    title: "Logout Confirmation",
+                    description: "Are you sure you want to logout?",
+                    variant: "destructive",
+                    action: (
+                      <div className="flex space-x-2">
+                      {/* Logout Button */}
+                      <ToastAction
+                        altText="Logout"
+                        onClick={() => {
+                          logout();
+                          toast({
+                            className: cn(
+                              "top-0 right-0 flex fixed md:max-w-[420px] md:top-4 md:right-4"
+                            ),
+                            title: "Logged out",
+                            description: "You have been logged out successfully",
+                          });
+                        }}
+                      >
+                        Logout
+                      </ToastAction>
+            
+                      {/* Cancel Button */}
+                      <ToastAction
+                        altText="Cancel"
+                        onClick={() => {
+                          toast({
+                            className: cn(
+                              "top-0 right-0 flex fixed md:max-w-[420px] md:top-4 md:right-4"
+                            ),
+                            title: "Logout Cancelled",
+                            description: "You have chosen to stay logged in.",
+                          });
+                        }}
+                      >
+                        Cancel
+                      </ToastAction>
+                    </div>
+                    ),
+                  });
+                }}
+              >
+                Logout
+              </Button>
             )}
 
             <button

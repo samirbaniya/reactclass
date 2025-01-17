@@ -1,33 +1,52 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { login } from "../api/auth";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import useAuthStore from "@/store/useAuthStore";
-import Loading from "@/mycomponents/Loading";
+import { useToast } from "@/hooks/use-toast";
+import { cn } from "@/lib/utils";
+// import { AlertDialogDemo } from "@/mycomponents/AlertBox";
 
 function LoginForm() {
   const navigate = useNavigate();
-
+  const [params] = useSearchParams();
+  const redirect = params.get("redirect") || "/";
   const { loginStore } = useAuthStore();
+  const { toast } = useToast();
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   const queryClient = useQueryClient();
 
   const { mutate: loginMutate, isPending } = useMutation({
     mutationFn: login,
+    // eslint-disable-next-line no-unused-vars
     onError: (err) => {
-      console.log(err);
-      alert("Failed to login!!!");
+      toast({
+        className: cn(
+          "top-0 right-0 flex fixed md:max-w-[420px] md:top-4 md:right-4"
+        ),
+        title: "Login Failed!!!",
+        description: "Please try again",
+        variant: "destructive",
+      });
     },
     onSuccess: (data) => {
       // console.log(data.token);
       loginStore(data.token);
-      alert("logged in successfully");
-      navigate("/");
+      toast({
+        className: cn(
+          "top-0 right-0 flex fixed md:max-w-[420px] md:top-4 md:right-4"
+        ),
+        title: "Successful!!!",
+        description: "Logged in successfully!!",
+      });
+      // AlertDialogDemo({ message: "logged in successfully" });
+      navigate(redirect);
       queryClient.invalidateQueries({ queryKey: ["products"] });
     },
   });
@@ -39,14 +58,6 @@ function LoginForm() {
     };
     loginMutate(userData);
   };
-
-  if (isPending) {
-    return (
-      <div>
-        <Loading />
-      </div>
-    );
-  }
 
   return (
     <div className="flex justify-center items-center h-screen w-screen dark:bg-slate-500 bg-slate-100">
@@ -92,7 +103,7 @@ function LoginForm() {
 
         <input
           disabled={isPending}
-          className={`text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center m-3 ${
+          className={`hover:cursor-pointer text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center m-3 ${
             isPending
               ? "bg-blue-400 dark:bg-blue-500"
               : "bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"

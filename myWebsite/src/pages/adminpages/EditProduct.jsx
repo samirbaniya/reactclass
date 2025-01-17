@@ -1,4 +1,6 @@
 import { getSingleProduct, updateProduct } from "@/api/product";
+import { useToast } from "@/hooks/use-toast";
+import { cn } from "@/lib/utils";
 import Loading from "@/mycomponents/Loading";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect } from "react";
@@ -6,6 +8,8 @@ import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
 
 function EditProduct() {
+  const { toast } = useToast();
+
   const { id } = useParams();
   const navigate = useNavigate();
   const {
@@ -29,14 +33,29 @@ function EditProduct() {
 
   const { mutate: updateProductMutate, isPending } = useMutation({
     mutationFn: ({ id, ProductData }) => updateProduct(id, ProductData),
+    retry: 3,
     onError: (err) => {
       console.log(err);
-      alert("Failed to update product!!!");
+      navigate("/admin/products");
+      toast({
+        className: cn(
+          "top-0 right-0 flex fixed md:max-w-[420px] md:top-4 md:right-4"
+        ),
+        title: "Failed to update product",
+        description: "Please try again.",
+        variant: "destructive",
+      });
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["products"] });
       navigate("/admin/products");
-      alert("Product updated successfully");
+      toast({
+        className: cn(
+          "top-0 right-0 flex fixed md:max-w-[420px] md:top-4 md:right-4"
+        ),
+        title: "Product updated",
+        description: "Product updated successfully.",
+      });
     },
   });
 
