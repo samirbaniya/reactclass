@@ -23,7 +23,7 @@ function AllProducts() {
       className="border-b hover:bg-gray-100 dark:hover:bg-gray-800"
     >
       <td className="p-3 text-center">{product.id}</td>
-      <td className="p-3 text-center">{product.title}</td>
+      <td className="p-3 text-left">{product.title}</td>
       <td className="p-3 text-center">{product.category}</td>
       <td className="p-3 text-center">${product.price}</td>
       <td className="p-3 text-center">

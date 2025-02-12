@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { login } from "../api/auth";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { NavLink, useNavigate, useSearchParams } from "react-router-dom";
 import useAuthStore from "@/store/useAuthStore";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
@@ -105,11 +105,17 @@ function LoginForm() {
           disabled={isPending}
           className={`hover:cursor-pointer text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center m-3 ${
             isPending
-              ? "bg-blue-400 dark:bg-blue-500"
+              ? "bg-blue-400 dark:bg-blue-500 flex items-center justify-center"
               : "bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           }`}
           type="submit"
+          value={isPending ? "Logging..." : "Login"}
         />
+        <div className="text-purple-800 underline">
+          <NavLink to={"/"}>
+            <div>Continue without Loging</div>
+          </NavLink>
+        </div>
       </form>
     </div>
   );
