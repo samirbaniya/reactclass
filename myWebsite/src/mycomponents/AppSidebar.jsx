@@ -40,12 +40,12 @@ const applicationItems = [
 const websiteItems = [
   {
     title: "Banner",
-    url: "#",
+    url: "/admin/BannerManagement",
     icon: Book,
   },
   {
     title: "Advertisement",
-    url: "#",
+    url: "/admin/addadvertisements",
     icon: Megaphone,
   },
   {

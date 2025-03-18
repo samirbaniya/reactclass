@@ -15,6 +15,8 @@ import AllProducts from "@/pages/adminpages/AllProducts";
 import Protected from "./Protected";
 import Checkout from "@/pages/Checkout";
 import AllUser from "@/pages/adminpages/AllUser";
+import Advertisements from "@/pages/adminpages/Advertisements";
+import BannerManagement from "@/pages/adminpages/BannerManagement";
 
 const router = createBrowserRouter([
   {
@@ -98,6 +100,14 @@ const router = createBrowserRouter([
       {
         path: "/admin/allusers",
         element: <AllUser />,
+      },
+      {
+        path: "/admin/addadvertisements",
+        element: <Advertisements />,
+      },
+      {
+        path: "/admin/BannerManagement",
+        element: <BannerManagement />,
       },
     ],
   },
